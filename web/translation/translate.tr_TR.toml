@@ -1,812 +1,812 @@
-"username" = "Kullanıcı Adı" #[cite: 1]
-"password" = "Şifre" #[cite: 1]
-"login" = "Giriş Yap" #[cite: 1]
-"confirm" = "Onayla" #[cite: 1]
-"cancel" = "İptal" #[cite: 1]
-"close" = "Kapat" #[cite: 1]
-"copy" = "Kopyala" #[cite: 1]
-"copied" = "Kopyalandı" #[cite: 1]
-"remark" = "Açıklama" #[cite: 1]
-"enable" = "Aktif" #[cite: 1]
-"protocol" = "Protokol" #[cite: 1]
-"filter" = "Filtrele" #[cite: 1]
-"search" = "Ara" #[cite: 1]
-"loading" = "Yükleniyor..." #[cite: 1]
-"none" = "Yok" #[cite: 1]
-"unlimited" = "Sınırsız" #[cite: 1]
-"qrCode" = "QR Kod" #[cite: 1]
-"info" = "Daha Fazla Bilgi" #[cite: 1]
-"edit" = "Düzenle" #[cite: 1]
-"delete" = "Sil" #[cite: 1]
-"reset" = "Sıfırla" #[cite: 1]
-"sure" = "Emin misiniz?" #[cite: 1]
-"encryption" = "Şifreleme" #[cite: 1]
-"transmission" = "İletim" #[cite: 1]
-"host" = "Sunucu (Host)" #[cite: 1]
-"path" = "Yol (Path)" #[cite: 1]
-"camouflage" = "Gizleme (Obfuscation)" #[cite: 1]
-"status" = "Durum" #[cite: 1]
-"enabled" = "Etkinleştirildi" #[cite: 1]
-"disabled" = "Devre Dışı" #[cite: 1]
-"depleted" = "Tükendi" #[cite: 1]
-"depletingSoon" = "Tükeniyor" #[cite: 1]
-"offline" = "Çevrimdışı" #[cite: 1]
-"online" = "Çevrimiçi" #[cite: 1]
-"domainName" = "Alan Adı" #[cite: 1]
-"monitor" = "Dinlenen IP" #[cite: 1]
-"certificate" = "Sertifika" #[cite: 1]
-"fail" = " Başarısız" #[cite: 1]
-"success" = " Başarılı" #[cite: 1]
-"get" = "Al" #[cite: 1]
-"getVersion" = "Versiyon Bilgisi Al" #[cite: 1]
-"install" = "Kur" #[cite: 1]
-"clients" = "İstemciler" #[cite: 1]
-"usage" = "Kullanım" #[cite: 1]
-"remained" = "Kalan" #[cite: 1]
-"secAlertTitle" = "Güvenlik Uyarısı" #[cite: 1]
-"secAlertSsl" = "Bu bağlantı güvenli değil. Veri koruması için TLS etkinleştirilene kadar hassas bilgileri girmekten kaçının." #[cite: 1]
-"secAlertConf" = "Bazı ayarlar saldırılara karşı savunmasızdır. Olası ihlalleri önlemek için güvenlik protokollerini güçlendirmeniz önerilir." #[cite: 1]
-"secAlertSSL" = "Panel güvenli bağlantıya sahip değil. Veri koruması için lütfen TLS sertifikası yükleyin." #[cite: 1]
-"secAlertPanelPort" = "Panel varsayılan portu savunmasızdır. Lütfen rastgele veya özel bir port yapılandırın." #[cite: 1]
-"secAlertPanelURI" = "Panel varsayılan URI yolu güvensiz. Lütfen karmaşık bir URI yolu yapılandırın." #[cite: 1]
-"secAlertSubURI" = "Abonelik varsayılan URI yolu güvensiz. Lütfen karmaşık bir URI yolu yapılandırın." #[cite: 1]
-"secAlertSubJsonURI" = "Abonelik JSON varsayılan URI yolu güvensiz. Lütfen karmaşık bir URI yolu yapılandırın." #[cite: 1]
-"security" = "Güvenlik" #[cite: 1]
-"network" = "Ağ" #[cite: 1]
-"address" = "Adres" #[cite: 1]
-"alpn" = "ALPN" #[cite: 1]
-"dest" = "Hedef" #[cite: 1]
-"mtu" = "MTU" #[cite: 1]
-"basic" = "Temel" #[cite: 1]
+"username" = "Kullanıcı Adı"
+"password" = "Şifre"
+"login" = "Giriş Yap"
+"confirm" = "Onayla"
+"cancel" = "İptal"
+"close" = "Kapat"
+"copy" = "Kopyala"
+"copied" = "Kopyalandı"
+"remark" = "Açıklama"
+"enable" = "Etkin"
+"protocol" = "Protokol"
+"filter" = "Filtrele"
+"search" = "Ara"
+"loading" = "Yükleniyor..."
+"none" = "Yok"
+"unlimited" = "Sınırsız"
+"qrCode" = "QR Kod"
+"info" = "Daha Fazla Bilgi"
+"edit" = "Düzenle"
+"delete" = "Sil"
+"reset" = "Sıfırla"
+"sure" = "Emin misiniz"
+"encryption" = "Şifreleme"
+"transmission" = "İletim"
+"host" = "Sunucu"
+"path" = "Yol"
+"camouflage" = "Gizleme"
+"status" = "Durum"
+"enabled" = "Etkin"
+"disabled" = "Devre Dışı"
+"depleted" = "Tükendi"
+"depletingSoon" = "Tükenmek Üzere"
+"offline" = "Çevrimdışı"
+"online" = "Çevrimiçi"
+"domainName" = "Alan Adı"
+"monitor" = "Dinlenen IP"
+"certificate" = "Sertifika"
+"fail" = " Başarısız"
+"success" = " Başarılı"
+"get" = "Al"
+"getVersion" = "Sürümü Al"
+"install" = "Kur"
+"clients" = "İstemciler"
+"usage" = "Kullanım"
+"remained" = "Kalan"
+"secAlertTitle" = "Güvenlik Uyarısı"
+"secAlertSsl" = "Bu bağlantı güvenli değil. Veri koruması için TLS etkinleştirilene kadar hassas bilgileri girmekten lütfen kaçının."
+"secAlertConf" = "Bazı ayarlar saldırılara karşı savunmasızdır. Olası ihlalleri önlemek için güvenlik protokollerini güçlendirmeniz önerilir."
+"secAlertSSL" = "Panelde güvenli bağlantı yok. Veri koruması için lütfen TLS sertifikası yükleyin."
+"secAlertPanelPort" = "Panelin varsayılan portu savunmasızdır. Lütfen rastgele veya belirli bir port yapılandırın."
+"secAlertPanelURI" = "Panelin varsayılan URI yolu güvenli değil. Lütfen karmaşık bir URI yolu yapılandırın."
+"secAlertSubURI" = "Aboneliğin varsayılan URI yolu güvenli değil. Lütfen karmaşık bir URI yolu yapılandırın."
+"secAlertSubJsonURI" = "Abonelik JSON varsayılan URI yolu güvenli değil. Lütfen karmaşık bir URI yolu yapılandırın."
+"security" = "Güvenlik"
+"network" = "Ağ"
+"address" = "Adres"
+"alpn" = "ALPN"
+"dest" = "Hedef"
+"mtu" = "MTU"
+"basic" = "Temel"
 
-[menu] #[cite: 1]
-"dashboard" = "Genel Bakış" #[cite: 1]
-"inbounds" = "Gelenler (Inbounds)" #[cite: 1]
-"outbounds" = "Gidenler (Outbounds)" #[cite: 1]
-"routing" = "Yönlendirme" #[cite: 1]
-"settings" = "Panel Ayarları" #[cite: 1]
-"xray" = "Xray Yapılandırmaları" #[cite: 1]
-"logout" = "Çıkış Yap" #[cite: 1]
-"link" = "Yönet" #[cite: 1]
+[menu]
+"dashboard" = "Genel Bakış"
+"inbounds" = "Gelen Bağlantılar"
+"outbounds" = "Giden Bağlantılar"
+"routing" = "Yönlendirme"
+"settings" = "Panel Ayarları"
+"xray" = "Xray Yapılandırmaları"
+"logout" = "Çıkış Yap"
+"link" = "Yönet"
 
-[pages.login] #[cite: 1]
-"title" = "Hoş Geldiniz" #[cite: 1]
-"loginAgain" = "Oturumunuzun süresi doldu, lütfen tekrar giriş yapın" #[cite: 1]
+[pages.login]
+"title" = "Hoş Geldiniz"
+"loginAgain" = "Oturumunuz sona erdi, lütfen tekrar giriş yapın"
 
-[pages.login.toasts] #[cite: 1]
-"invalidFormData" = "Girdi veri formatı geçersiz" #[cite: 1]
-"emptyUsername" = "Kullanıcı adı gerekli" #[cite: 1]
-"emptyPassword" = "Şifre gerekli" #[cite: 1]
-"wrongUsernameOrPassword" = "Kullanıcı adı veya şifre hatalı" #[cite: 1]
-"successLogin" = "Giriş Başarılı" #[cite: 1]
+[pages.login.toasts]
+"invalidFormData" = "Girdi veri formatı geçersiz"
+"emptyUsername" = "Kullanıcı adı gerekli"
+"emptyPassword" = "Şifre gerekli"
+"wrongUsernameOrPassword" = "Kullanıcı adı veya şifre yanlış"
+"successLogin" = "Giriş Yapıldı"
 
-[pages.index] #[cite: 1]
-"title" = "Genel Bakış" #[cite: 1]
-"memory" = "RAM" #[cite: 1]
-"hard" = "Disk" #[cite: 1]
-"serverInfo" = "Sunucu" #[cite: 1]
-"hostname" = "Sunucu Adı" #[cite: 1]
-"xrayStatus" = "Xray" #[cite: 1]
-"stopXray" = "Durdur" #[cite: 1]
-"restartXray" = "Yeniden Başlat" #[cite: 1]
-"xraySwitch" = "Xray Versiyonunu Değiştir" #[cite: 1]
-"xraySwitchClick" = "Geçiş yapmak istediğiniz versiyonu seçin." #[cite: 1]
-"xraySwitchClickDesk" = "Dikkatli seçin, eski versiyonlar mevcut yapılandırmalarla uyumlu olmayabilir." #[cite: 1]
-"operationHours" = "Çalışma Süresi" #[cite: 1]
-"operationHoursDesc" = "İşletim sistemi başlangıcından beri çalışma süresi" #[cite: 1]
-"xrayoperationHoursDesc" = "Xray'in son yeniden başlatılmasından beri çalışma süresi" #[cite: 1]
-"systemLoad" = "Sistem Yükü" #[cite: 1]
-"systemLoadDesc" = "Son 1, 5 ve 15 dakika için ortalama yük" #[cite: 1]
-"connectionTcpCountDesc" = "Toplam TCP bağlantıları" #[cite: 1]
-"connectionUdpCountDesc" = "Toplam UDP bağlantıları" #[cite: 1]
-"upSpeed" = "Genel yükleme hızı" #[cite: 1]
-"downSpeed" = "Genel indirme hızı" #[cite: 1]
-"totalSent" = "İşletim sistemi başlangıcından beri gönderilen toplam veri" #[cite: 1]
-"totalReceive" = "İşletim sistemi başlangıcından beri alınan toplam veri" #[cite: 1]
-"xraySwitchVersionDialog" = "Xray Versiyonunu Değiştir" #[cite: 1]
-"xraySwitchVersionDialogDesc" = "Xray versiyonunu şuna değiştirmek istediğinize emin misiniz:" #[cite: 1]
-"dontRefresh" = "Kurulum devam ediyor, lütfen bu sayfayı yenilemeyin." #[cite: 1]
-"logs" = "Günlükler" #[cite: 1]
-"config" = "Yapılandırma" #[cite: 1]
-"backup" = "Yedekle ve Geri Yükle" #[cite: 1]
-"backupTitle" = "Veritabanı Yedekle ve Geri Yükle" #[cite: 1]
-"backupDescription" = "Bir veritabanını geri yüklemeden önce yedek almanız önerilir." #[cite: 1]
-"exportDatabase" = "Yedek Al" #[cite: 1]
-"importDatabase" = "Geri Yükle" #[cite: 1]
+[pages.index]
+"title" = "Genel Bakış"
+"memory" = "RAM"
+"hard" = "Disk"
+"serverInfo" = "Sunucu"
+"hostname" = "Sunucu Adı"
+"xrayStatus" = "Xray"
+"stopXray" = "Durdur"
+"restartXray" = "Yeniden Başlat"
+"xraySwitch" = "Xray Sürümünü Değiştir"
+"xraySwitchClick" = "Geçiş yapmak istediğiniz sürümü seçin."
+"xraySwitchClickDesk" = "Eski sürümler mevcut yapılandırmalarla uyumlu olmayabileceği için dikkatli seçin."
+"operationHours" = "Çalışma Süresi"
+"operationHoursDesc" = "İşletim sistemi başlangıcından beri çalışma süresi"
+"xrayoperationHoursDesc" = "Xray'in son yeniden başlatılmasından bu yana çalışma süresi"
+"systemLoad" = "Sistem Yükü"
+"systemLoadDesc" = "Son 1, 5 ve 15 dakika için ortalama yük"
+"connectionTcpCountDesc" = "Toplam TCP bağlantıları"
+"connectionUdpCountDesc" = "Toplam UDP bağlantıları"
+"upSpeed" = "Genel yükleme hızı"
+"downSpeed" = "Genel indirme hızı"
+"totalSent" = "İşletim sistemi başlangıcından bu yana gönderilen toplam veri"
+"totalReceive" = "İşletim sistemi başlangıcından bu yana alınan toplam veri"
+"xraySwitchVersionDialog" = "Xray Sürümünü Değiştir"
+"xraySwitchVersionDialogDesc" = "Xray sürümünü şuna değiştirmek istediğinizden emin misiniz:"
+"dontRefresh" = "Kurulum devam ediyor, lütfen bu sayfayı yenilemeyin."
+"logs" = "Günlükler (Logs)"
+"config" = "Yapılandırma"
+"backup" = "Yedekle ve Geri Yükle"
+"backupTitle" = "Veritabanı Yedekleme ve Geri Yükleme"
+"backupDescription" = "Bir veritabanını geri yüklemeden önce yedekleme yapılması önerilir."
+"exportDatabase" = "Yedek Al"
+"importDatabase" = "Geri Yükle"
 
-[pages.inbounds] #[cite: 1]
-"title" = "Gelenler (Inbounds)" #[cite: 1]
-"totalUsage" = "Toplam Kullanım" #[cite: 1]
-"inboundCount" = "Toplam Gelen Bağlantı" #[cite: 1]
-"operate" = "Menü" #[cite: 1]
-"port" = "Port" #[cite: 1]
-"portMap" = "Port Eşleme" #[cite: 1]
-"traffic" = "Trafik" #[cite: 1]
-"details" = "Detaylar" #[cite: 1]
-"expireDate" = "Bitiş Tarihi" #[cite: 1]
-"resetTraffic" = "Trafiği Sıfırla" #[cite: 1]
-"addInbound" = "Gelen Ekle" #[cite: 1]
-"generalActions" = "Genel Eylemler" #[cite: 1]
-"onlineIps" = "Çevrimiçi IP Adresleri" #[cite: 1]
-"noOnlineIps" = "IP adresi yok" #[cite: 1]
-"lastSeen" = "Son Görülme" #[cite: 1]
-"create" = "Oluştur" #[cite: 1]
-"update" = "Güncelle" #[cite: 1]
-"modifyInbound" = "Geleni Düzenle" #[cite: 1]
-"deleteInbound" = "Geleni Sil" #[cite: 1]
-"deleteInboundContent" = "Bu gelen bağlantıyı silmek istediğinize emin misiniz?" #[cite: 1]
-"deleteClient" = "İstemciyi Sil" #[cite: 1]
-"deleteClientContent" = "İstemciyi silmek istediğinize emin misiniz?" #[cite: 1]
-"resetTrafficContent" = "Trafiği sıfırlamak istediğinize emin misiniz?" #[cite: 1]
-"transportConfig" = "İletim Yapılandırması" #[cite: 1]
-"destinationPort" = "Hedef Port" #[cite: 1]
-"targetAddress" = "Hedef Adres" #[cite: 1]
-"monitorDesc" = "Tüm IP'leri dinlemek için boş bırakın" #[cite: 1]
-"meansNoLimit" = "Sıfır sınırsız demektir. (Birim: GB)" #[cite: 1]
-"totalFlow" = "Toplam Trafik" #[cite: 1]
-"limitIp" = "IP Sınırı" #[cite: 1]
-"limitIpDesc" = "Sıfır sınırsız demektir. Eşzamanlı IP adreslerinin maksimum sayısı." #[cite: 1]
-"limitIpNotSupported" = "Desteklenmiyor" #[cite: 1]
-"leaveBlankToNeverExpire" = "Süresiz olması için boş bırakın" #[cite: 1]
-"noRecommendKeepDefault" = "Varsayılanı tutmanız önerilir" #[cite: 1]
-"certificatePath" = "Sertifika Dosya Yolu" #[cite: 1]
-"certificateContent" = "Sertifika Dosya İçeriği" #[cite: 1]
-"publicKeyPath" = "Açık Anahtar (Public Key) Yolu" #[cite: 1]
-"publicKeyContent" = "Açık Anahtar İçeriği" #[cite: 1]
-"keyPath" = "Gizli Anahtar (Private Key) Yolu" #[cite: 1]
-"keyContent" = "Gizli Anahtar İçeriği" #[cite: 1]
-"clickOnQRcode" = "Kopyalamak için QR Koda Tıklayın" #[cite: 1]
-"client" = "İstemci" #[cite: 1]
-"export" = "Tüm URL'leri Dışa Aktar" #[cite: 1]
-"clone" = "Klonla" #[cite: 1]
-"cloneInbound" = "Klonla" #[cite: 1]
-"cloneInboundOk" = "Klonla" #[cite: 1]
-"cloneInboundContent" = "Port, Dinlenen IP ve İstemciler hariç bu gelene ait tüm ayarlar klona uygulanacaktır." #[cite: 1]
-"resetAllTraffic" = "Tüm Gelenlerin Trafiğini Sıfırla" #[cite: 1]
-"resetAllTrafficTitle" = "Tüm Gelenlerin Trafiğini Sıfırla" #[cite: 1]
-"resetAllTrafficContent" = "Tüm gelenlerin trafiğini sıfırlamak istediğinize emin misiniz?" #[cite: 1]
-"resetInboundClientTraffics" = "İstemcilerin Trafiğini Sıfırla" #[cite: 1]
-"resetInboundClientTrafficTitle" = "İstemcilerin Trafiğini Sıfırla" #[cite: 1]
-"resetInboundClientTrafficContent" = "Bu gelene ait istemcilerin trafiğini sıfırlamak istediğinize emin misiniz?" #[cite: 1]
-"resetAllClientTraffics" = "Tüm İstemcilerin Trafiğini Sıfırla" #[cite: 1]
-"resetAllClientTrafficTitle" = "Tüm İstemcilerin Trafiğini Sıfırla" #[cite: 1]
-"resetAllClientTrafficContent" = "Tüm istemcilerin trafiğini sıfırlamak istediğinize emin misiniz?" #[cite: 1]
-"delDepletedClients" = "Tükenen İstemcileri Sil" #[cite: 1]
-"delDepletedClientsTitle" = "Tükenen İstemcileri Sil" #[cite: 1]
-"delDepletedClientsContent" = "Tükenen tüm istemcileri silmek istediğinize emin misiniz?" #[cite: 1]
-"email" = "E-posta" #[cite: 1]
-"emailDesc" = "Lütfen benzersiz bir e-posta adresi sağlayın" #[cite: 1]
-"setDefaultCert" = "Panelden Sertifika Ayarla" #[cite: 1]
-"telegramDesc" = "Lütfen '@' sembolü kullanmadan Sohbet ID(lerini) sağlayın. (Buradan alabilirsiniz @userinfobot) veya (Botta '/id' komutunu kullanın)" #[cite: 1]
-"subscriptionDesc" = "Abonelik URL'nizi bulmak için 'Daha Fazla Bilgi'ye gidin. Ayrıca, birden fazla istemci için aynı adı kullanabilirsiniz." #[cite: 1]
-"info" = "Bilgi" #[cite: 1]
-"same" = "Aynı" #[cite: 1]
-"inboundData" = "Gelen Verisi" #[cite: 1]
-"copyLink" = "URL'yi Kopyala" #[cite: 1]
-"exportInbound" = "Geleni Dışa Aktar" #[cite: 1]
-"import" = "İçe Aktar" #[cite: 1]
-"importInbound" = "Bir Gelen İçe Aktar" #[cite: 1]
+[pages.inbounds]
+"title" = "Gelen Bağlantılar"
+"totalUsage" = "Toplam Kullanım"
+"inboundCount" = "Toplam Gelen Bağlantı"
+"operate" = "Menü"
+"port" = "Port"
+"portMap" = "Port Eşleme"
+"traffic" = "Trafik"
+"details" = "Detaylar"
+"expireDate" = "Sona Erme Tarihi"
+"resetTraffic" = "Trafiği Sıfırla"
+"addInbound" = "Gelen Bağlantı Ekle"
+"generalActions" = "Genel Eylemler"
+"onlineIps" = "Çevrimiçi IP Adresleri"
+"noOnlineIps" = "IP adresi yok"
+"lastSeen" = "Son Görülme"
+"create" = "Oluştur"
+"update" = "Güncelle"
+"modifyInbound" = "Gelen Bağlantıyı Düzenle"
+"deleteInbound" = "Gelen Bağlantıyı Sil"
+"deleteInboundContent" = "Gelen bağlantıyı silmek istediğinizden emin misiniz?"
+"deleteClient" = "İstemciyi Sil"
+"deleteClientContent" = "İstemciyi silmek istediğinizden emin misiniz?"
+"resetTrafficContent" = "Trafiği sıfırlamak istediğinizden emin misiniz?"
+"transportConfig" = "Aktarım Yapılandırması"
+"destinationPort" = "Hedef Port"
+"targetAddress" = "Hedef Adres"
+"monitorDesc" = "Tüm IP'leri dinlemek için boş bırakın"
+"meansNoLimit" = "Sıfır sınırsız demektir. (Birim: GB)"
+"totalFlow" = "Toplam Trafik"
+"limitIp" = "IP Sınırı"
+"limitIpDesc" = "Sıfır sınırsız demektir. İzin verilen maksimum eşzamanlı IP adresi sayısı."
+"limitIpNotSupported" = "Desteklenmiyor"
+"leaveBlankToNeverExpire" = "Süresiz olması için boş bırakın"
+"noRecommendKeepDefault" = "Varsayılanı tutmanız önerilir"
+"certificatePath" = "Dosya Yolu"
+"certificateContent" = "Dosya İçeriği"
+"publicKeyPath" = "Açık Anahtar (Public Key) Yolu"
+"publicKeyContent" = "Açık Anahtar İçeriği"
+"keyPath" = "Özel Anahtar (Private Key) Yolu"
+"keyContent" = "Özel Anahtar İçeriği"
+"clickOnQRcode" = "Kopyalamak için QR Koduna Tıklayın"
+"client" = "İstemci"
+"export" = "Tüm URL'leri Dışa Aktar"
+"clone" = "Klonla"
+"cloneInbound" = "Klonla"
+"cloneInboundOk" = "Klonla"
+"cloneInboundContent" = "Port, Dinlenen IP ve İstemciler hariç, bu bağlantı için tüm ayarlar klona uygulanacaktır."
+"resetAllTraffic" = "Tüm Gelen Bağlantı Trafiklerini Sıfırla"
+"resetAllTrafficTitle" = "Tüm Gelen Bağlantı Trafiklerini Sıfırla"
+"resetAllTrafficContent" = "Tüm gelen bağlantıların trafiğini sıfırlamak istediğinizden emin misiniz?"
+"resetInboundClientTraffics" = "İstemci Trafiğini Sıfırla"
+"resetInboundClientTrafficTitle" = "İstemci Trafiğini Sıfırla"
+"resetInboundClientTrafficContent" = "Bu gelen bağlantının istemci trafiğini sıfırlamak istediğinizden emin misiniz?"
+"resetAllClientTraffics" = "Tüm İstemci Trafiklerini Sıfırla"
+"resetAllClientTrafficTitle" = "Tüm İstemci Trafiklerini Sıfırla"
+"resetAllClientTrafficContent" = "Tüm istemcilerin trafiğini sıfırlamak istediğinizden emin misiniz?"
+"delDepletedClients" = "Tükenmiş İstemcileri Sil"
+"delDepletedClientsTitle" = "Tükenmiş İstemcileri Sil"
+"delDepletedClientsContent" = "Tüm tükenmiş istemcileri silmek istediğinizden emin misiniz?"
+"email" = "E-posta"
+"emailDesc" = "Lütfen benzersiz bir e-posta adresi sağlayın"
+"setDefaultCert" = "Sertifikayı Panelden Ayarla"
+"telegramDesc" = "Lütfen '@' sembolünü kullanmadan Sohbet ID(lerini) sağlayın. (Buradan alabilirsiniz @userinfobot) veya (Botta '/id' komutunu kullanın)"
+"subscriptionDesc" = "Abonelik URL'nizi bulmak için 'Daha Fazla Bilgi' bölümüne gidin. Ek olarak, aynı adı birkaç istemci için kullanabilirsiniz."
+"info" = "Bilgi" 
+"same" = "Aynı"
+"inboundData" = "Gelen Bağlantı Verisi"
+"copyLink" = "URL'yi Kopyala"
+"exportInbound" = "Gelen Bağlantıyı Dışa Aktar"
+"import" = "İçe Aktar"
+"importInbound" = "Bir Gelen Bağlantıyı İçe Aktar"
 
-[pages.routingRules] #[cite: 1]
-"title" = "Yönlendirme" #[cite: 1]
-"ruleTag" = "Kural Etiketi" #[cite: 1]
-"ruleTagDesc" = "API için benzersiz etiket (ruleTag)" #[cite: 1]
-"update" = "Kuralı Güncelle" #[cite: 1]
-"deleteConfirm" = "Bu yönlendirme kuralını silmek istediğinize emin misiniz?" #[cite: 1]
-"dragToReorder" = "Yeniden sıralamak için sürükleyin" #[cite: 1]
+[pages.routingRules]
+"title" = "Yönlendirme"
+"ruleTag" = "Kural Etiketi"
+"ruleTagDesc" = "API için benzersiz etiket (ruleTag)"
+"update" = "Kuralı Güncelle"
+"deleteConfirm" = "Bu yönlendirme kuralını silmek istediğinizden emin misiniz?"
+"dragToReorder" = "Yeniden sıralamak için sürükleyin"
 
-[pages.routingRules.toasts] #[cite: 1]
-"obtain" = "Yönlendirme kuralları yüklenemedi" #[cite: 1]
+[pages.routingRules.toasts]
+"obtain" = "Yönlendirme kuralları yüklenemedi"
 
-[pages.outbounds] #[cite: 1]
-"title" = "Gidenler (Outbounds)" #[cite: 1]
-"totalUsage" = "Toplam Kullanım" #[cite: 1]
-"outboundCount" = "Toplam Giden Bağlantı" #[cite: 1]
-"create" = "Oluştur" #[cite: 1]
-"edit" = "Gideni Düzenle" #[cite: 1]
-"update" = "Güncelle" #[cite: 1]
-"delete" = "Gideni Sil" #[cite: 1]
-"deleteConfirm" = "Bu giden bağlantıyı silmek istediğinize emin misiniz?" #[cite: 1]
-"resetTraffic" = "Trafiği Sıfırla" #[cite: 1]
-"resetAllTraffic" = "Tüm Giden Trafiğini Sıfırla" #[cite: 1]
-"test" = "Gideni Test Et" #[cite: 1]
-"testAll" = "Tüm Gidenleri Test Et" #[cite: 1]
-"testTooltip" = "Bağlantıyı ve gecikmeyi test et" #[cite: 1]
-"testing" = "Test ediliyor..." #[cite: 1]
-"testSuccess" = "Erişilebilir" #[cite: 1]
-"testFailed" = "Erişilemiyor" #[cite: 1]
+[pages.outbounds]
+"title" = "Giden Bağlantılar"
+"totalUsage" = "Toplam Kullanım"
+"outboundCount" = "Toplam Giden Bağlantı"
+"create" = "Oluştur"
+"edit" = "Giden Bağlantıyı Düzenle"
+"update" = "Güncelle"
+"delete" = "Giden Bağlantıyı Sil"
+"deleteConfirm" = "Bu giden bağlantıyı silmek istediğinizden emin misiniz?"
+"resetTraffic" = "Trafiği Sıfırla"
+"resetAllTraffic" = "Tüm Giden Trafiği Sıfırla"
+"test" = "Giden Bağlantıyı Test Et"
+"testAll" = "Tüm Giden Bağlantıları Test Et"
+"testTooltip" = "Bağlantıyı ve gecikmeyi test et"
+"testing" = "Test ediliyor..."
+"testSuccess" = "Erişilebilir"
+"testFailed" = "Erişilemez"
 
-[pages.outbounds.toasts] #[cite: 1]
-"obtain" = "Gidenler yüklenemedi" #[cite: 1]
+[pages.outbounds.toasts]
+"obtain" = "Giden bağlantılar yüklenemedi"
 
-[pages.client] #[cite: 1]
-"add" = "İstemci Ekle" #[cite: 1]
-"edit" = "İstemciyi Düzenle" #[cite: 1]
-"submitAdd" = "İstemci Ekle" #[cite: 1]
-"submitEdit" = "Değişiklikleri Kaydet" #[cite: 1]
-"clientCount" = "İstemci Sayısı" #[cite: 1]
-"bulk" = "Toplu Ekle" #[cite: 1]
-"method" = "Yöntem" #[cite: 1]
-"first" = "İlk" #[cite: 1]
-"last" = "Son" #[cite: 1]
-"prefix" = "Önek" #[cite: 1]
-"postfix" = "Sonek" #[cite: 1]
-"delayedStart" = "İlk Kullanımda Başlat" #[cite: 1]
-"expireDays" = "Süre" #[cite: 1]
-"days" = "Gün" #[cite: 1]
-"renew" = "Otomatik Yenile" #[cite: 1]
-"renewDesc" = "Süre dolduktan sonra otomatik yenileme. (0 = devre dışı)(Birim: gün)" #[cite: 1]
+[pages.client]
+"add" = "İstemci Ekle"
+"edit" = "İstemciyi Düzenle"
+"submitAdd" = "İstemci Ekle"
+"submitEdit" = "Değişiklikleri Kaydet"
+"clientCount" = "İstemci Sayısı"
+"bulk" = "Toplu Ekle"
+"method" = "Yöntem"
+"first" = "İlk"
+"last" = "Son"
+"prefix" = "Ön Ek"
+"postfix" = "Son Ek"
+"delayedStart" = "İlk Kullanımda Başlat"
+"expireDays" = "Süre"
+"days" = "Gün"
+"renew" = "Otomatik Yenileme"
+"renewDesc" = "Süre bitiminden sonra otomatik yenileme. (0 = devre dışı)(Birim: gün)"
 
-[pages.inbounds.toasts] #[cite: 1]
-"obtain" = "Elde Et" #[cite: 1]
-"xrayOnlineObtain" = "Xray'den çevrimiçi kullanıcılar yüklenemedi" #[cite: 1]
+[pages.inbounds.toasts]
+"obtain" = "Elde Et"
+"xrayOnlineObtain" = "Xray'den çevrimiçi kullanıcılar yüklenemedi"
 
-[pages.inbounds.stream.general] #[cite: 1]
-"request" = "İstek" #[cite: 1]
-"response" = "Yanıt" #[cite: 1]
-"name" = "Ad" #[cite: 1]
-"value" = "Değer" #[cite: 1]
+[pages.inbounds.stream.general]
+"request" = "İstek"
+"response" = "Yanıt"
+"name" = "İsim"
+"value" = "Değer"
 
-[pages.inbounds.stream.tcp] #[cite: 1]
-"version" = "Versiyon" #[cite: 1]
-"method" = "Yöntem" #[cite: 1]
-"statusDescription" = "Durum Açıklaması" #[cite: 1]
-"requestHeader" = "İstek Başlığı" #[cite: 1]
-"responseHeader" = "Yanıt Başlığı" #[cite: 1]
+[pages.inbounds.stream.tcp]
+"version" = "Sürüm"
+"method" = "Yöntem"
+"statusDescription" = "Durum Açıklaması"
+"requestHeader" = "İstek Başlığı"
+"responseHeader" = "Yanıt Başlığı"
 
-[pages.inbounds.stream.xhttp] #[cite: 1]
-"mode" = "Mod" #[cite: 1]
-"extraSettings" = "Ekstra Ayarlar" #[cite: 1]
-"extraSettingsDesc" = "Her xray-core XHTTP için host/path/mod dışındaki tüm ayarlar \"ekstra\" altında bulunur. Devre dışı bırakıldığında nesne oluşturulan JSON'dan çıkarılır ve xray-core kendi varsayılanlarını kullanır." #[cite: 1]
-"clientDefaults" = "İstemci Varsayılanları (ekstra ile paylaşılır)" #[cite: 1]
-"paddingBytes" = "Dolgu Baytları" #[cite: 1]
-"paddingObfsMode" = "Dolgu Gizleme Modu" #[cite: 1]
-"paddingKey" = "Dolgu Anahtarı" #[cite: 1]
-"paddingHeader" = "Dolgu Başlığı" #[cite: 1]
-"paddingPlacement" = "Dolgu Yerleşimi" #[cite: 1]
-"paddingMethod" = "Dolgu Yöntemi" #[cite: 1]
-"maxBufferedUpload" = "Maksimum Tamponlu Yükleme" #[cite: 1]
-"maxUploadSize" = "Maksimum Yükleme Boyutu (Bayt)" #[cite: 1]
-"streamUpServer" = "Akış-Yukarı (Stream-Up) Sunucusu" #[cite: 1]
-"uplinkHTTPMethod" = "Yukarı Bağlantı (Uplink) HTTP Yöntemi" #[cite: 1]
-"sessionPlacement" = "Oturum Yerleşimi" #[cite: 1]
-"sessionKey" = "Oturum Anahtarı" #[cite: 1]
-"seqPlacement" = "Dizi (Sequence) Yerleşimi" #[cite: 1]
-"seqKey" = "Dizi Anahtarı" #[cite: 1]
-"uplinkDataPlacement" = "Yukarı Bağlantı Veri Yerleşimi" #[cite: 1]
-"uplinkDataKey" = "Yukarı Bağlantı Veri Anahtarı" #[cite: 1]
-"uplinkChunkSize" = "Yukarı Bağlantı Parça Boyutu" #[cite: 1]
-"noSSEHeader" = "SSE Başlığı Yok" #[cite: 1]
-"noGRPCHeader" = "gRPC Başlığı Yok" #[cite: 1]
-"noGRPCHeaderDesc" = "Ekstra aracılığıyla istemcilere iletilir. Sadece istemci içindir: istemciye akış-yukarı/bir isteklerinde gRPC İçerik-Türü başlığını göndermemesini söyler. Yalnızca akış-yukarı/akış-bir modları için anlamlıdır." #[cite: 1]
-"minUploadInterval" = "Minimum Yükleme Aralığı (Ms)" #[cite: 1]
-"serverMaxHeaderBytes" = "Sunucu Maksimum Başlık Baytları" #[cite: 1]
-"serverMaxHeaderBytesDesc" = "Sadece sunucu içindir. Sunucu tarafından kabul edilen istek başlıklarının maksimum boyutu. Varsayılan 8192. Öndeki bir CDN/ters proxy daha büyük başlıklar gönderiyorsa artırın. 0 = varsayılanı kullan." #[cite: 1]
-"maxConcurrency" = "Maksimum Eşzamanlılık" #[cite: 1]
-"maxConnections" = "Maksimum Bağlantılar" #[cite: 1]
-"maxReuseTimes" = "Maksimum Yeniden Kullanım Sayısı" #[cite: 1]
-"maxRequestTimes" = "Maksimum İstek Sayısı" #[cite: 1]
-"maxReusableSecs" = "Maksimum Yeniden Kullanılabilir Saniye" #[cite: 1]
-"keepAlivePeriod" = "Bağlantıyı Canlı Tutma Süresi" #[cite: 1]
-"downloadSettings" = "İndirme Ayarları" #[cite: 1]
-"downloadSettingsDesc" = "XHTTP yukarı/aşağı akış ayrımı. Etkinleştirildiğinde aşağıdaki JSON istemcilerle \"extra.downloadSettings\" üzerinden paylaşılır. Tam bir akış ayarları (streamSettings) nesnesi olmalıdır. İçteki xhttpSettings.path yükleme yoluyla eşleşmelidir." #[cite: 1]
-"downloadJSON" = "İndirme JSON'ı" #[cite: 1]
-"hostHeaderForbidden" = "\"Host\" başlığına burada izin verilmez; yukarıdaki Host alanını kullanın." #[cite: 1]
+[pages.inbounds.stream.xhttp]
+"mode" = "Mod"
+"extraSettings" = "Ekstra Ayarlar"
+"extraSettingsDesc" = "Xray-core XHTTP başına, host/path/mode dışındaki tüm ayarlar \"extra\" altında bulunur. Devre dışı bırakıldığında, nesne oluşturulan JSON'dan atlanır ve xray-core varsayılanlarını kullanır."
+"clientDefaults" = "İstemci Varsayılanları (extra aracılığıyla paylaşılır)"
+"paddingBytes" = "Dolgu Baytları (Padding Bytes)"
+"paddingObfsMode" = "Dolgu Gizleme Modu"
+"paddingKey" = "Dolgu Anahtarı"
+"paddingHeader" = "Dolgu Başlığı"
+"paddingPlacement" = "Dolgu Yerleşimi"
+"paddingMethod" = "Dolgu Yöntemi"
+"maxBufferedUpload" = "Maksimum Tamponlanmış Yükleme"
+"maxUploadSize" = "Maksimum Yükleme Boyutu (Byte)"
+"streamUpServer" = "Stream-Up Sunucusu"
+"uplinkHTTPMethod" = "Uplink HTTP Yöntemi"
+"sessionPlacement" = "Oturum Yerleşimi"
+"sessionKey" = "Oturum Anahtarı"
+"seqPlacement" = "Sıra Yerleşimi"
+"seqKey" = "Sıra Anahtarı"
+"uplinkDataPlacement" = "Uplink Veri Yerleşimi"
+"uplinkDataKey" = "Uplink Veri Anahtarı"
+"uplinkChunkSize" = "Uplink Parça Boyutu"
+"noSSEHeader" = "SSE Başlığı Yok"
+"noGRPCHeader" = "gRPC Başlığı Yok"
+"noGRPCHeaderDesc" = "İstemcilere 'extra' üzerinden itilir. Yalnızca İstemci: İstemciye stream-up/one isteklerinde gRPC Content-Type başlığını göndermemesini söyler. Yalnızca stream-up/stream-one modları için anlamlıdır."
+"minUploadInterval" = "Minimum Yükleme Aralığı (Ms)"
+"serverMaxHeaderBytes" = "Sunucu Maksimum Başlık Baytları"
+"serverMaxHeaderBytesDesc" = "Yalnızca sunucu. Sunucu tarafından kabul edilen maksimum istek başlıkları boyutu. Varsayılan 8192. Öndeki bir CDN/ters proxy daha büyük başlıklar gönderiyorsa artırın. 0 = varsayılanı kullan."
+"maxConcurrency" = "Maksimum Eşzamanlılık"
+"maxConnections" = "Maksimum Bağlantı"
+"maxReuseTimes" = "Maksimum Yeniden Kullanım Sayısı"
+"maxRequestTimes" = "Maksimum İstek Sayısı"
+"maxReusableSecs" = "Maksimum Yeniden Kullanılabilir Saniye"
+"keepAlivePeriod" = "Bağlantıyı Açık Tutma Süresi (Keep Alive)"
+"downloadSettings" = "İndirme Ayarları"
+"downloadSettingsDesc" = "XHTTP upstream/downstream ayrımı. Etkinleştirildiğinde, aşağıdaki JSON istemcilerle \"extra.downloadSettings\" aracılığıyla paylaşılır. Tam bir streamSettings nesnesi (address, port, network, security, tlsSettings/realitySettings, xhttpSettings, sockopt) olmalıdır. İçteki xhttpSettings.path yükleme yoluyla EŞLEŞMELİDİR."
+"downloadJSON" = "İndirme JSON'u"
+"hostHeaderForbidden" = "\"Host\" başlığına burada izin verilmiyor; yukarıdaki Host alanını kullanın."
 
-[pages.inbounds.stream.tls] #[cite: 1]
-"sni" = "SNI" #[cite: 1]
-"sniDesc" = "Sunucu Adı Belirtimi (Server Name Indication)" #[cite: 1]
-"cipherSuites" = "Şifreleme Süitleri (Cipher Suites)" #[cite: 1]
-"minMaxVersion" = "Min/Maks Versiyon" #[cite: 1]
-"uTLS" = "uTLS" #[cite: 1]
-"allowInsecure" = "Güvensiz Bağlantıya İzin Ver" #[cite: 1]
-"rejectUnknownSni" = "Bilinmeyen SNI'yi Reddet" #[cite: 1]
-"disableSystemRoot" = "Sistem Kökünü (System Root) Devre Dışı Bırak" #[cite: 1]
-"sessionResumption" = "Oturum Devam Ettirme" #[cite: 1]
-"ocspStapling" = "OCSP Zımbalama (Stapling)" #[cite: 1]
-"echKey" = "ECH Anahtarı" #[cite: 1]
-"echConfig" = "ECH Yapılandırması" #[cite: 1]
-"echForceQuery" = "ECH Zorunlu Sorgu" #[cite: 1]
+[pages.inbounds.stream.tls]
+"sni" = "SNI"
+"sniDesc" = "Sunucu Adı Belirtimi (Server Name Indication)"
+"cipherSuites" = "Şifreleme Süitleri (Cipher Suites)"
+"minMaxVersion" = "Min/Maks Sürüm"
+"uTLS" = "uTLS"
+"allowInsecure" = "Güvensiz Bağlantıya İzin Ver"
+"rejectUnknownSni" = "Bilinmeyen SNI'yi Reddet"
+"disableSystemRoot" = "Sistem Kökünü (System Root) Devre Dışı Bırak"
+"sessionResumption" = "Oturum Devam Ettirme"
+"ocspStapling" = "OCSP zımbalama (Stapling)"
+"echKey" = "ECH anahtarı"
+"echConfig" = "ECH yapılandırması"
+"echForceQuery" = "ECH sorguyu zorla"
 
-[pages.inbounds.stream.reality] #[cite: 1]
-"show" = "Göster" #[cite: 1]
-"xver" = "Xver" #[cite: 1]
-"spiderX" = "SpiderX" #[cite: 1]
-"privateKey" = "Gizli Anahtar (Private Key)" #[cite: 1]
-"publicKey" = "Açık Anahtar (Public Key)" #[cite: 1]
-"mldsa65Seed" = "mldsa65 Seed" #[cite: 1]
-"mldsa65Verify" = "mldsa65 Doğrulama" #[cite: 1]
-"limitFallback" = "Geri Dönüş (Fallback) Sınırı" #[cite: 1]
-"limitFallbackUpload" = "Geri Dönüş Yükleme Sınırı" #[cite: 1]
-"limitFallbackDownload" = "Geri Dönüş İndirme Sınırı" #[cite: 1]
-"afterBytes" = "Sonraki Baytlar" #[cite: 1]
-"bytesPerSec" = "Saniye Başına Bayt" #[cite: 1]
-"burstBytesPerSec" = "Saniye Başına Anlık Artış (Burst) Baytları" #[cite: 1]
+[pages.inbounds.stream.reality]
+"show" = "Göster"
+"xver" = "Xver"
+"spiderX" = "SpiderX"
+"privateKey" = "Özel Anahtar (Private Key)"
+"publicKey" = "Açık Anahtar (Public Key)"
+"mldsa65Seed" = "mldsa65 Tohumu (Seed)"
+"mldsa65Verify" = "mldsa65 Doğrula (Verify)"
+"limitFallback" = "Geri Çekilmeyi (Fallback) Sınırla"
+"limitFallbackUpload" = "Geri Çekilme Yüklemesini Sınırla"
+"limitFallbackDownload" = "Geri Çekilme İndirmesini Sınırla"
+"afterBytes" = "Sonraki Baytlar (After Bytes)"
+"bytesPerSec" = "Saniye Başına Bayt"
+"burstBytesPerSec" = "Saniye Başına Ani (Burst) Bayt"
 
-[pages.inbounds.stream.sockopt] #[cite: 1]
-"sockopt" = "Sockopt" #[cite: 1]
-"routeMark" = "Yönlendirme İşareti (Route Mark)" #[cite: 1]
-"tcpKeepAliveInterval" = "TCP Canlı Tutma Aralığı" #[cite: 1]
-"tcpKeepAliveIdle" = "TCP Canlı Tutma Boşta Bekleme" #[cite: 1]
-"tcpMaxSeg" = "TCP Maksimum Segment" #[cite: 1]
-"tcpUserTimeout" = "TCP Kullanıcı Zaman Aşımı" #[cite: 1]
-"tcpWindowClamp" = "TCP Pencere Sınırı (Window Clamp)" #[cite: 1]
-"proxyProtocol" = "Proxy Protokolü" #[cite: 1]
-"tcpFastOpen" = "TCP Hızlı Açılış" #[cite: 1]
-"tcpNoDelay" = "TCP Gecikmesiz" #[cite: 1]
-"happyEyeballs" = "Happy Eyeballs" #[cite: 1]
-"prioritizeIPv6" = "IPv6'ya Öncelik Ver" #[cite: 1]
-"interleave" = "Serpiştirme (Interleave)" #[cite: 1]
-"tryDelayMs" = "Deneme Gecikmesi (ms)" #[cite: 1]
-"maxConcurrentTry" = "Maksimum Eşzamanlı Deneme" #[cite: 1]
-"multipathTCP" = "Çok Yollu TCP (Multipath TCP)" #[cite: 1]
-"penetrate" = "Nüfuz Et (Penetrate)" #[cite: 1]
-"v6Only" = "Sadece IPv6" #[cite: 1]
-"domainStrategy" = "Alan Adı Stratejisi" #[cite: 1]
-"tcpCongestion" = "TCP Tıkanıklığı" #[cite: 1]
-"tproxy" = "TProxy" #[cite: 1]
-"dialerProxy" = "Çevirici Proxy (Dialer Proxy)" #[cite: 1]
-"interfaceName" = "Arayüz Adı" #[cite: 1]
-"trustedXForwardedFor" = "Güvenilir X-Forwarded-For" #[cite: 1]
+[pages.inbounds.stream.sockopt]
+"sockopt" = "Sockopt"
+"routeMark" = "Yönlendirme İşareti (Route Mark)"
+"tcpKeepAliveInterval" = "TCP Açık Tutma Aralığı"
+"tcpKeepAliveIdle" = "TCP Açık Tutma Boşta (Idle)"
+"tcpMaxSeg" = "TCP Maksimum Parça (Seg)"
+"tcpUserTimeout" = "TCP Kullanıcı Zaman Aşımı"
+"tcpWindowClamp" = "TCP Pencere Kelepçesi (Window Clamp)"
+"proxyProtocol" = "Proxy Protokolü"
+"tcpFastOpen" = "TCP Hızlı Açma"
+"tcpNoDelay" = "TCP Gecikmesiz (No Delay)"
+"happyEyeballs" = "Mutlu Gözbebekleri (Happy Eyeballs)"
+"prioritizeIPv6" = "IPv6'ya Öncelik Ver"
+"interleave" = "Serpiştirme (Interleave)"
+"tryDelayMs" = "Deneme Gecikmesi (ms)"
+"maxConcurrentTry" = "Maksimum Eşzamanlı Deneme"
+"multipathTCP" = "Çok Yollu (Multipath) TCP"
+"penetrate" = "Nüfuz Etme (Penetrate)"
+"v6Only" = "Sadece V6"
+"domainStrategy" = "Alan Adı Stratejisi"
+"tcpCongestion" = "TCP Tıkanıklığı"
+"tproxy" = "TProxy"
+"dialerProxy" = "Çevirici (Dialer) Proxy"
+"interfaceName" = "Arayüz Adı"
+"trustedXForwardedFor" = "Güvenilir X-Forwarded-For"
 
-[pages.inbounds.stream.sniffing] #[cite: 1]
-"metadataOnly" = "Sadece Meta Verisi" #[cite: 1]
-"routeOnly" = "Sadece Yönlendirme" #[cite: 1]
+[pages.inbounds.stream.sniffing]
+"metadataOnly" = "Sadece Meta Veri"
+"routeOnly" = "Sadece Yönlendirme"
 
-[pages.inbounds.stream.grpc] #[cite: 1]
-"serviceName" = "Servis Adı" #[cite: 1]
-"authority" = "Otorite" #[cite: 1]
-"multiMode" = "Çoklu Mod" #[cite: 1]
+[pages.inbounds.stream.grpc]
+"serviceName" = "Hizmet Adı"
+"authority" = "Yetkili (Authority)"
+"multiMode" = "Çoklu Mod"
 
-[pages.inbounds.stream.kcp] #[cite: 1]
-"tti" = "TTI (ms)" #[cite: 1]
-"uplinkMBps" = "Yukarı Bağlantı (MB/s)" #[cite: 1]
-"downlinkMBps" = "Aşağı Bağlantı (MB/s)" #[cite: 1]
-"congestion" = "Tıkanıklık" #[cite: 1]
-"readBuffer" = "Okuma Tamponu (MB)" #[cite: 1]
-"writeBuffer" = "Yazma Tamponu (MB)" #[cite: 1]
+[pages.inbounds.stream.kcp]
+"tti" = "TTI (ms)"
+"uplinkMBps" = "Uplink (MB/s)"
+"downlinkMBps" = "Downlink (MB/s)"
+"congestion" = "Tıkanıklık"
+"readBuffer" = "Okuma Tamponu (MB)"
+"writeBuffer" = "Yazma Tamponu (MB)"
 
-[pages.inbounds.stream.common] #[cite: 1]
-"proxyProtocol" = "PROXY Protokolü" #[cite: 1]
-"externalProxy" = "Harici Proxy" #[cite: 1]
+[pages.inbounds.stream.common]
+"proxyProtocol" = "PROXY Protokolü"
+"externalProxy" = "Harici Proxy"
 
-[pages.inbounds.stream.finalmask] #[cite: 1]
-"udpMasks" = "UDP Maskeleri" #[cite: 1]
-"udpMask" = "UDP Maskesi" #[cite: 1]
-"tcpMasks" = "TCP Maskeleri" #[cite: 1]
-"tcpMask" = "TCP Maskesi" #[cite: 1]
-"obfuscationPassword" = "Gizleme şifresi" #[cite: 1]
-"client" = "İstemci" #[cite: 1]
-"server" = "Sunucu" #[cite: 1]
-"noise" = "Gürültü (Noise)" #[cite: 1]
-"rand" = "Rastgele (Rand)" #[cite: 1]
-"randRange" = "Rastgele Aralık" #[cite: 1]
-"packet" = "Paket" #[cite: 1]
-"packetItem" = "Paket Öğesi" #[cite: 1]
-"binaryData" = "ikili veri (binary data)" #[cite: 1]
-"delay" = "Gecikme" #[cite: 1]
-"maxSplit" = "Maksimum Bölme" #[cite: 1]
-"ascii" = "ASCII" #[cite: 1]
-"customTable" = "Özel Tablo" #[cite: 1]
-"customTables" = "Özel Tablolar" #[cite: 1]
-"paddingMin" = "Minimum Dolgu" #[cite: 1]
-"paddingMax" = "Maksimum Dolgu" #[cite: 1]
-"listenIp" = "Dinlenen IP" #[cite: 1]
-"round" = "Tur" #[cite: 1]
-"quicParams" = "QUIC Parametreleri" #[cite: 1]
-"debug" = "Hata Ayıklama (Debug)" #[cite: 1]
-"brutalUp" = "Brutal Up" #[cite: 1]
-"brutalDown" = "Brutal Down" #[cite: 1]
-"udpHopPorts" = "UDP Atlama Portları" #[cite: 1]
-"udpHopInterval" = "UDP Atlama Aralığı" #[cite: 1]
-"maxIncomingStreams" = "Maksimum Gelen Akışlar" #[cite: 1]
+[pages.inbounds.stream.finalmask]
+"udpMasks" = "UDP Maskeleri"
+"udpMask" = "UDP Maskesi"
+"tcpMasks" = "TCP Maskeleri"
+"tcpMask" = "TCP Maskesi"
+"obfuscationPassword" = "Gizleme şifresi"
+"client" = "İstemci"
+"server" = "Sunucu"
+"noise" = "Gürültü"
+"rand" = "Rastgele (Rand)"
+"randRange" = "Rastgele Aralığı"
+"packet" = "Paket"
+"packetItem" = "Paket Öğesi"
+"binaryData" = "ikili veri (binary data)"
+"delay" = "Gecikme"
+"maxSplit" = "Maksimum Bölme"
+"ascii" = "ASCII"
+"customTable" = "Özel Tablo"
+"customTables" = "Özel Tablolar"
+"paddingMin" = "Minimum Dolgu"
+"paddingMax" = "Maksimum Dolgu"
+"listenIp" = "Dinlenen IP"
+"round" = "Tur (Round)"
+"quicParams" = "QUIC Parametreleri"
+"debug" = "Hata Ayıklama (Debug)"
+"brutalUp" = "Brutal Up"
+"brutalDown" = "Brutal Down"
+"udpHopPorts" = "UDP Sıçrama (Hop) Portları"
+"udpHopInterval" = "UDP Sıçrama Aralığı"
+"maxIncomingStreams" = "Maksimum Gelen Akış"
 
-[pages.inbounds.stream.hysteria] #[cite: 1]
-"authPassword" = "Kimlik Doğrulama Şifresi" #[cite: 1]
-"udpIdleTimeout" = "UDP Boşta Zaman Aşımı" #[cite: 1]
-"masquerade" = "Kılık Değiştirme (Masquerade)" #[cite: 1]
-"type" = "Tür" #[cite: 1]
-"dir" = "Dizin (Dir)" #[cite: 1]
-"url" = "URL" #[cite: 1]
-"rewriteHost" = "Sunucuyu Yeniden Yaz" #[cite: 1]
-"insecure" = "Güvensiz" #[cite: 1]
-"content" = "İçerik" #[cite: 1]
-"statusCode" = "Durum Kodu" #[cite: 1]
+[pages.inbounds.stream.hysteria]
+"authPassword" = "Kimlik Doğrulama Şifresi"
+"udpIdleTimeout" = "UDP Boşta Kalma Zaman Aşımı"
+"masquerade" = "Gizlenme (Masquerade)"
+"type" = "Tür"
+"dir" = "Dizin"
+"url" = "URL"
+"rewriteHost" = "Sunucuyu Yeniden Yaz (Rewrite Host)"
+"insecure" = "Güvensiz"
+"content" = "İçerik"
+"statusCode" = "Durum Kodu"
 
-[pages.inbounds.protocols] #[cite: 1]
-"flow" = "Akış" #[cite: 1]
-"authentication" = "Kimlik Doğrulama" #[cite: 1]
-"decryption" = "Şifre Çözme" #[cite: 1]
-"fallbacks" = "Geri Dönüşler (Fallbacks)" #[cite: 1]
-"xVer" = "xVer" #[cite: 1]
-"visionPreConnect" = "Vision Ön Bağlantı" #[cite: 1]
-"visionSeed" = "Vision Tohumu (Seed)" #[cite: 1]
-"udpOverTCP" = "TCP Üzerinden UDP" #[cite: 1]
-"followRedirect" = "Yönlendirmeyi Takip Et" #[cite: 1]
-"allowTransparent" = "Şeffaflığa İzin Ver" #[cite: 1]
-"ivCheck" = "IV Kontrolü" #[cite: 1]
-"noKernelTun" = "Çekirdek Tun Yok" #[cite: 1]
-"peers" = "Eşler (Peers)" #[cite: 1]
-"keepAlive" = "Bağlantıyı Canlı Tut (Keep Alive)" #[cite: 1]
-"workers" = "İşçiler (Workers)" #[cite: 1]
+[pages.inbounds.protocols]
+"flow" = "Akış (Flow)"
+"authentication" = "Kimlik Doğrulama"
+"decryption" = "Şifre Çözme"
+"fallbacks" = "Geri Çekilmeler (Fallbacks)"
+"xVer" = "xVer"
+"visionPreConnect" = "Vision Ön Bağlantı"
+"visionSeed" = "Vision Tohumu (Seed)"
+"udpOverTCP" = "TCP üzerinden UDP"
+"followRedirect" = "Yönlendirmeyi İzle"
+"allowTransparent" = "Şeffaflığa İzin Ver"
+"ivCheck" = "IV Kontrolü"
+"noKernelTun" = "Çekirdek Tun Yok (No Kernel Tun)"
+"peers" = "Eşler (Peers)"
+"keepAlive" = "Bağlantıyı Açık Tut"
+"workers" = "İşçiler (Workers)"
 
-[pages.xray.outbound.freedom] #[cite: 1]
-"strategy" = "Strateji" #[cite: 1]
-"redirect" = "Yönlendirme" #[cite: 1]
-"fragment" = "Parçalama (Fragment)" #[cite: 1]
-"packets" = "Paketler" #[cite: 1]
-"length" = "Uzunluk" #[cite: 1]
-"interval" = "Aralık" #[cite: 1]
-"noises" = "Gürültüler" #[cite: 1]
+[pages.xray.outbound.freedom]
+"strategy" = "Strateji"
+"redirect" = "Yönlendir"
+"fragment" = "Parçalanma (Fragment)"
+"packets" = "Paketler"
+"length" = "Uzunluk"
+"interval" = "Aralık"
+"noises" = "Gürültüler"
 
-[pages.xray.outbound.dns] #[cite: 1]
-"responseType" = "Yanıt Türü" #[cite: 1]
-"nonIPQueries" = "IP dışı sorgular" #[cite: 1]
-"blockTypes" = "Engelleme Türleri" #[cite: 1]
+[pages.xray.outbound.dns]
+"responseType" = "Yanıt Türü"
+"nonIPQueries" = "IP dışı sorgular"
+"blockTypes" = "Engelleme Türleri"
 
-[pages.xray.outbound.loopback] #[cite: 1]
-"inboundTag" = "Gelen Etiketi" #[cite: 1]
+[pages.xray.outbound.loopback]
+"inboundTag" = "Gelen Bağlantı Etiketi"
 
-[pages.xray.outbound.socks] #[cite: 1]
-"version" = "Versiyon" #[cite: 1]
+[pages.xray.outbound.socks]
+"version" = "Sürüm"
 
-[pages.xray.outbound.hysteria] #[cite: 1]
-"uploadSpeed" = "Yükleme Hızı" #[cite: 1]
-"downloadSpeed" = "İndirme Hızı" #[cite: 1]
-"udpHopPort" = "UDP Atlama Portu" #[cite: 1]
-"hopIntervalMin" = "Atlama Aralığı Min (s)" #[cite: 1]
-"hopIntervalMax" = "Atlama Aralığı Maks (s)" #[cite: 1]
-"initStreamReceive" = "İlk Akış Alma" #[cite: 1]
-"maxStreamReceive" = "Maksimum Akış Alma" #[cite: 1]
-"initConnReceive" = "İlk Bağlantı Alma" #[cite: 1]
-"maxConnReceive" = "Maksimum Bağlantı Alma" #[cite: 1]
-"maxIdleTimeout" = "Maksimum Boşta Bekleme Zaman Aşımı (s)" #[cite: 1]
-"keepAlivePeriod" = "Bağlantıyı Canlı Tutma Süresi (s)" #[cite: 1]
-"disablePathMTU" = "Yol MTU'sunu Devre Dışı Bırak" #[cite: 1]
+[pages.xray.outbound.hysteria]
+"uploadSpeed" = "Yükleme Hızı"
+"downloadSpeed" = "İndirme Hızı"
+"udpHopPort" = "UDP Sıçrama Portu"
+"hopIntervalMin" = "Minimum Sıçrama Aralığı (s)"
+"hopIntervalMax" = "Maksimum Sıçrama Aralığı (s)"
+"initStreamReceive" = "İlk Akış Alımı"
+"maxStreamReceive" = "Maksimum Akış Alımı"
+"initConnReceive" = "İlk Bağlantı Alımı"
+"maxConnReceive" = "Maksimum Bağlantı Alımı"
+"maxIdleTimeout" = "Maksimum Boşta Kalma Süresi (s)"
+"keepAlivePeriod" = "Bağlantıyı Açık Tutma Süresi (s)"
+"disablePathMTU" = "Yol MTU'sunu Devre Dışı Bırak"
 
-[pages.xray.outbound.tlsExtra] #[cite: 1]
-"echConfigList" = "ECH Yapılandırma Listesi" #[cite: 1]
-"verifyPeerCertByName" = "Eş Sertifikasını İme Göre Doğrula" #[cite: 1]
-"pinnedPeerCert" = "Sabitlenmiş Eş Sertifikası" #[cite: 1]
-"shortID" = "Kısa ID" #[cite: 1]
+[pages.xray.outbound.tlsExtra]
+"echConfigList" = "ECH Yapılandırma Listesi"
+"verifyPeerCertByName" = "Eş Sertifikasını İsme Göre Doğrula"
+"pinnedPeerCert" = "Sabitlenmiş Eş Sertifikası"
+"shortID" = "Kısa ID"
 
-[pages.xray.outbound.sockoptExtra] #[cite: 1]
-"addressPortStrategy" = "Adres Port Stratejisi" #[cite: 1]
-"keepAliveInterval" = "Canlı Tutma Aralığı" #[cite: 1]
+[pages.xray.outbound.sockoptExtra]
+"addressPortStrategy" = "Adres Port Stratejisi"
+"keepAliveInterval" = "Açık Tutma Aralığı"
 
-[pages.xray.outbound.mux] #[cite: 1]
-"mux" = "Mux" #[cite: 1]
-"concurrency" = "Eşzamanlılık" #[cite: 1]
-"xudpConcurrency" = "xudp Eşzamanlılık" #[cite: 1]
-"xudpUDP443" = "xudp UDP 443" #[cite: 1]
-"pinnedSha256" = "SHA256 parmak izlerini girin (base64)" #[cite: 1]
+[pages.xray.outbound.mux]
+"mux" = "Mux"
+"concurrency" = "Eşzamanlılık"
+"xudpConcurrency" = "xudp Eşzamanlılık"
+"xudpUDP443" = "xudp UDP 443"
+"pinnedSha256" = "SHA256 parmak izlerini girin (base64)"
 
-[pages.xray.rule] #[cite: 1]
-"domainMatcher" = "Alan Adı Eşleştirici" #[cite: 1]
-"attributes" = "Nitelikler (Attributes)" #[cite: 1]
-"inboundTags" = "Gelen Etiketleri" #[cite: 1]
-"outboundTag" = "Giden Etiketi" #[cite: 1]
+[pages.xray.rule]
+"domainMatcher" = "Alan Adı Eşleştirici"
+"attributes" = "Öznitelikler"
+"inboundTags" = "Gelen Bağlantı Etiketleri"
+"outboundTag" = "Giden Bağlantı Etiketi"
 
-[pages.settings] #[cite: 1]
-"title" = "Panel Ayarları" #[cite: 1]
-"save" = "Kaydet" #[cite: 1]
-"infoDesc" = "Burada yapılan her değişikliğin kaydedilmesi gerekir. Değişikliklerin etkili olması için lütfen paneli yeniden başlatın." #[cite: 1]
-"restartPanel" = "Paneli Yeniden Başlat" #[cite: 1]
-"restartPanelDesc" = "Paneli yeniden başlatmak istediğinize emin misiniz? Yeniden başlattıktan sonra panele erişemezseniz, lütfen terminal betiğindeki günlükleri kontrol edin." #[cite: 1]
-"resetDefaultConfig" = "Varsayılana Sıfırla" #[cite: 1]
-"panelConfig" = "Genel" #[cite: 1]
-"userSettings" = "Kimlik Doğrulama" #[cite: 1]
-"TGBotSettings" = "Telegram Botu" #[cite: 1]
-"panelListeningIP" = "Dinlenen IP" #[cite: 1]
-"panelListeningIPDesc" = "Web paneli için IP adresi. (Tüm IP'leri dinlemek için boş bırakın)" #[cite: 1]
-"panelListeningDomain" = "Dinlenen Alan Adı" #[cite: 1]
-"panelListeningDomainDesc" = "Web paneli için alan adı. (Tüm alan adlarını ve IP'leri dinlemek için boş bırakın)" #[cite: 1]
-"panelPort" = "Dinlenen Port" #[cite: 1]
-"panelPortDesc" = "Web paneli için port numarası. (Kullanılmayan bir port olmalıdır)" #[cite: 1]
-"publicKeyPath" = "Açık Anahtar (Public Key) Yolu" #[cite: 1]
-"publicKeyPathDesc" = "Web paneli için açık anahtar dosya yolu. (‘/‘ ile başlar)" #[cite: 1]
-"privateKeyPath" = "Gizli Anahtar (Private Key) Yolu" #[cite: 1]
-"privateKeyPathDesc" = "Web paneli için gizli anahtar dosya yolu. (‘/‘ ile başlar)" #[cite: 1]
-"panelUrlPath" = "URI Yolu" #[cite: 1]
-"panelUrlPathDesc" = "Web paneli için URI yolu. (‘/‘ ile başlar ve ‘/‘ ile biter)" #[cite: 1]
-"pageSize" = "Sayfalama Boyutu" #[cite: 1]
-"pageSizeDesc" = "Gelen bağlantılar tablosu için sayfa boyutu. (0 = devre dışı)" #[cite: 1]
-"remarkModel" = "Açıklama Modeli ve Ayırıcı Karakter" #[cite: 1]
-"sampleRemark" = "Örnek Açıklama" #[cite: 1]
-"oldUsername" = "Mevcut Kullanıcı Adı" #[cite: 1]
-"currentPassword" = "Mevcut Şifre" #[cite: 1]
-"newUsername" = "Yeni Kullanıcı Adı" #[cite: 1]
-"newPassword" = "Yeni Şifre" #[cite: 1]
-"telegramBotEnable" = "Telegram Botunu Etkinleştir" #[cite: 1]
-"telegramBotEnableDesc" = "Telegram botunu etkinleştirir." #[cite: 1]
-"telegramToken" = "Telegram Token'ı" #[cite: 1]
-"telegramTokenDesc" = "Telegram token'ı. (Buradan alabilirsiniz @BotFather)" #[cite: 1]
-"telegramChatId" = "Yönetici Sohbet ID'si" #[cite: 1]
-"telegramChatIdDesc" = "Telegram Yönetici Sohbet ID(leri). (Virgülle ayrılmış)(Buradan alabilirsiniz @userinfobot) veya (Botta '/id' komutunu kullanın)" #[cite: 1]
-"telegramNotifyTime" = "Bildirim Zamanı" #[cite: 1]
-"telegramNotifyTimeDesc" = "Periyodik raporlar için ayarlanan Telegram botu bildirim zamanı. (Crontab zaman formatını kullanın)" #[cite: 1]
-"tgNotifyBackup" = "Veritabanı Yedeklemesi" #[cite: 1]
-"tgNotifyBackupDesc" = "Raporla birlikte bir veritabanı yedekleme dosyası alın." #[cite: 1]
-"tgNotifyLogin" = "Giriş Bildirimi" #[cite: 1]
-"tgNotifyLoginDesc" = "Biri web panelinize giriş yapmaya çalıştığında kullanıcı adı, IP ve zaman hakkında bildirim alın." #[cite: 1]
-"sessionMaxAge" = "Oturum Süresi" #[cite: 1]
-"sessionMaxAgeDesc" = "Giriş yapmış olarak kalabileceğiniz süre. (Birim: dakika)" #[cite: 1]
-"expireTimeDiff" = "Bitiş Süresi Bildirimi" #[cite: 1]
-"expireTimeDiffDesc" = "Kalan süre ayarlanan eşiğe ulaştığında bildirim alın. (Birim: gün)" #[cite: 1]
-"trafficDiff" = "Trafik Sınırı Bildirimi" #[cite: 1]
-"trafficDiffDesc" = "Kalan trafik ayarlanan eşiğe ulaştığında bildirim alın. (Birim: GB)" #[cite: 1]
-"tgNotifyCpu" = "CPU Yük Bildirimi" #[cite: 1]
-"tgNotifyCpuDesc" = "CPU yükü ayarlanan eşiği aşarsa bildirim alın. (Birim: %)" #[cite: 1]
-"timeZone" = "Saat Dilimi" #[cite: 1]
-"timeZoneDesc" = "Zamanlanmış görevler bu saat dilimine göre çalışacaktır." #[cite: 1]
-"outboundTestUrl" = "Giden Test URL'si" #[cite: 1]
-"outboundTestUrlDesc" = "Giden bağlantıyı ve gecikmeyi test etmek için kullanılan URL. 204 döndüren hafif bir uç nokta önerilir." #[cite: 1]
-"ipBlockAfterRemove" = "İstemci Kaldırıldıktan Sonra IP'leri Engelle" #[cite: 1]
-"ipBlockAfterRemoveDesc" = "Bir istemci kaldırıldığında, devre dışı bırakıldığında veya tükendiğinde bağlı IP'leri anında engelle. Etkili olması için uygulamanın yeniden başlatılması gerekir." #[cite: 1]
-"subSettings" = "Abonelik" #[cite: 1]
-"subEnable" = "Abonelik Servisini Etkinleştir" #[cite: 1]
-"subEnableDesc" = "Abonelik servisini etkinleştirir." #[cite: 1]
-"subListen" = "Dinlenen IP" #[cite: 1]
-"subListenDesc" = "Abonelik servisi için IP adresi. (Tüm IP'leri dinlemek için boş bırakın)" #[cite: 1]
-"subPort" = "Dinlenen Port" #[cite: 1]
-"subPortDesc" = "Abonelik servisi için port numarası. (Kullanılmayan bir port olmalıdır)" #[cite: 1]
-"subCertPath" = "Açık Anahtar (Public Key) Yolu" #[cite: 1]
-"subCertPathDesc" = "Abonelik servisi için açık anahtar dosya yolu. (‘/‘ ile başlar)" #[cite: 1]
-"subKeyPath" = "Gizli Anahtar (Private Key) Yolu" #[cite: 1]
-"subKeyPathDesc" = "Abonelik servisi için gizli anahtar dosya yolu. (‘/‘ ile başlar)" #[cite: 1]
-"subPath" = "URI Yolu" #[cite: 1]
-"subPathDesc" = "Abonelik servisi için URI yolu. (‘/‘ ile başlar ve ‘/‘ ile biter)" #[cite: 1]
-"subDomain" = "Dinlenen Alan Adı" #[cite: 1]
-"subDomainDesc" = "Abonelik servisi için alan adı. (Tüm alan adlarını ve IP'leri dinlemek için boş bırakın)" #[cite: 1]
-"subUpdates" = "Güncelleme Aralıkları" #[cite: 1]
-"subUpdatesDesc" = "İstemci uygulamalarındaki abonelik URL'sinin güncelleme aralıkları. (Birim: saat)" #[cite: 1]
-"subEncrypt" = "Kodlama" #[cite: 1]
-"subEncryptDesc" = "Abonelik servisinin döndürülen içeriği Base64 ile kodlanacaktır." #[cite: 1]
-"subShowInfo" = "Kullanım Bilgisini Göster" #[cite: 1]
-"subShowInfoDesc" = "Kalan trafik ve tarih istemci uygulamalarında görüntülenecektir." #[cite: 1]
-"subURI" = "Ters Proxy URI'si" #[cite: 1]
-"subURIDesc" = "Abonelik servisi, ters proxy'lerin arkasında ayarlanan URI'yi kullanacaktır." #[cite: 1]
-"fragment" = "Parçalanma (Fragmentation)" #[cite: 1]
-"fragmentDesc" = "TLS hello paketi için parçalanmayı etkinleştirin" #[cite: 1]
-"fragmentSett" = "Parçalanma Ayarları" #[cite: 1]
-"noisesDesc" = "Gürültüleri (Noises) Etkinleştir." #[cite: 1]
-"noisesSett" = "Gürültü Ayarları" #[cite: 1]
-"mux" = "Mux" #[cite: 1]
-"muxDesc" = "Kurulmuş bir veri akışı içinde birden fazla bağımsız veri akışını iletin." #[cite: 1]
-"muxSett" = "Mux Ayarları" #[cite: 1]
-"direct" = "Doğrudan Bağlantı" #[cite: 1]
-"directDesc" = "Belirli bir ülkenin alan adları veya IP aralıklarıyla doğrudan bağlantılar kurar." #[cite: 1]
+[pages.settings]
+"title" = "Panel Ayarları"
+"save" = "Kaydet"
+"infoDesc" = "Burada yapılan her değişikliğin kaydedilmesi gerekir. Değişikliklerin etkili olması için lütfen paneli yeniden başlatın."
+"restartPanel" = "Paneli Yeniden Başlat"
+"restartPanelDesc" = "Paneli yeniden başlatmak istediğinizden emin misiniz? Yeniden başlattıktan sonra panele erişemezseniz, lütfen terminal betiğindeki günlükleri kontrol edin"
+"resetDefaultConfig" = "Varsayılana Sıfırla"
+"panelConfig" = "Genel"
+"userSettings" = "Kimlik Doğrulama"
+"TGBotSettings" = "Telegram Bot"
+"panelListeningIP" = "Dinlenen IP"
+"panelListeningIPDesc" = "Web paneli için IP adresi. (Tüm IP'leri dinlemek için boş bırakın)"
+"panelListeningDomain" = "Dinlenen Alan Adı"
+"panelListeningDomainDesc" = "Web paneli için alan adı. (Tüm alan adlarını ve IP'leri dinlemek için boş bırakın)"
+"panelPort" = "Dinleme Portu"
+"panelPortDesc" = "Web paneli için port numarası. (Kullanılmayan bir port olmalıdır)"
+"publicKeyPath" = "Açık Anahtar Yolu"
+"publicKeyPathDesc" = "Web paneli için açık anahtar dosya yolu. (‘/‘ ile başlar)"
+"privateKeyPath" = "Özel Anahtar Yolu"
+"privateKeyPathDesc" = "Web paneli için özel anahtar dosya yolu. (‘/‘ ile başlar)"
+"panelUrlPath" = "URI Yolu"
+"panelUrlPathDesc" = "Web paneli için URI yolu. (‘/‘ ile başlar ve ‘/‘ ile biter)"
+"pageSize" = "Sayfa Boyutu"
+"pageSizeDesc" = "Gelen bağlantılar tablosu için sayfa boyutu. (0 = devre dışı)"
+"remarkModel" = "Açıklama Modeli ve Ayırma Karakteri"
+"sampleRemark" = "Örnek Açıklama"
+"oldUsername" = "Mevcut Kullanıcı Adı"
+"currentPassword" = "Mevcut Şifre"
+"newUsername" = "Yeni Kullanıcı Adı"
+"newPassword" = "Yeni Şifre"
+"telegramBotEnable" = "Telegram Botunu Etkinleştir"
+"telegramBotEnableDesc" = "Telegram botunu etkinleştirir."
+"telegramToken" = "Telegram Token"
+"telegramTokenDesc" = "Telegram token. (Buradan alabilirsiniz @BotFather)"
+"telegramChatId" = "Yönetici Sohbet ID"
+"telegramChatIdDesc" = "Telegram Yönetici Sohbet ID(leri). (Virgülle ayrılmış)(Buradan alabilirsiniz @userinfobot) veya (Botta '/id' komutunu kullanın)"
+"telegramNotifyTime" = "Bildirim Zamanı"
+"telegramNotifyTimeDesc" = "Periyodik raporlar için ayarlanan Telegram bot bildirim zamanı. (Crontab zaman formatını kullanın)"
+"tgNotifyBackup" = "Veritabanı Yedekleme"
+"tgNotifyBackupDesc" = "Bir raporla birlikte veritabanı yedek dosyası alın."
+"tgNotifyLogin" = "Giriş Bildirimi"
+"tgNotifyLoginDesc" = "Birisi web panelinize giriş yapmaya çalıştığında kullanıcı adı, IP ve saat hakkında bildirim alın."
+"sessionMaxAge" = "Oturum Süresi"
+"sessionMaxAgeDesc" = "Oturumunuzun açık kalabileceği süre. (Birim: dakika)"
+"expireTimeDiff" = "Sona Erme Süresi Bildirimi"
+"expireTimeDiffDesc" = "Kalan süre belirlenen eşiğe ulaştığında bildirim alın. (Birim: gün)"
+"trafficDiff" = "Trafik Sınırı Bildirimi"
+"trafficDiffDesc" = "Kalan trafik belirlenen eşiğe ulaştığında bildirim alın. (Birim: GB)"
+"tgNotifyCpu" = "CPU Yük Bildirimi"
+"tgNotifyCpuDesc" = "CPU yükü ayarlanan eşiği aşarsa bildirim alın. (Birim: %)"
+"timeZone" = "Saat Dilimi"
+"timeZoneDesc" = "Zamanlanmış görevler bu saat dilimine göre çalışacaktır."
+"outboundTestUrl" = "Giden Test URL'si"
+"outboundTestUrlDesc" = "Giden bağlantıyı ve gecikmeyi test etmek için kullanılan URL. 204 döndüren hafif bir uç nokta (endpoint) önerilir."
+"ipBlockAfterRemove" = "İstemci Kaldırıldıktan Sonra IP'leri Engelle"
+"ipBlockAfterRemoveDesc" = "Bir istemci kaldırıldığında, devre dışı bırakıldığında veya tükendiğinde bağlı IP'leri anında engelle. Etkili olması için uygulamanın yeniden başlatılmasını gerektirir."
+"subSettings" = "Abonelik"
+"subEnable" = "Abonelik Hizmetini Etkinleştir"
+"subEnableDesc" = "Abonelik hizmetini etkinleştirir."
+"subListen" = "Dinlenen IP"
+"subListenDesc" = "Abonelik hizmeti için IP adresi. (Tüm IP'leri dinlemek için boş bırakın)"
+"subPort" = "Dinlenen Port"
+"subPortDesc" = "Abonelik hizmeti için port numarası. (Kullanılmayan bir port olmalıdır)"
+"subCertPath" = "Açık Anahtar Yolu"
+"subCertPathDesc" = "Abonelik hizmeti için açık anahtar dosya yolu. (‘/‘ ile başlar)"
+"subKeyPath" = "Özel Anahtar Yolu"
+"subKeyPathDesc" = "Abonelik hizmeti için özel anahtar dosya yolu. (‘/‘ ile başlar)"
+"subPath" = "URI Yolu"
+"subPathDesc" = "Abonelik hizmeti için URI yolu. (‘/‘ ile başlar ve ‘/‘ ile biter)"
+"subDomain" = "Dinlenen Alan Adı"
+"subDomainDesc" = "Abonelik hizmeti için alan adı. (Tüm alan adlarını ve IP'leri dinlemek için boş bırakın)"
+"subUpdates" = "Güncelleme Aralıkları"
+"subUpdatesDesc" = "İstemci uygulamalarında abonelik URL'sinin güncelleme aralıkları. (Birim: saat)"
+"subEncrypt" = "Şifrele (Encode)"
+"subEncryptDesc" = "Abonelik hizmetinin döndürülen içeriği Base64 olarak şifrelenir."
+"subShowInfo" = "Kullanım Bilgilerini Göster"
+"subShowInfoDesc" = "Kalan trafik ve tarih istemci uygulamalarında gösterilecektir."
+"subURI" = "Ters Proxy URI"
+"subURIDesc" = "Abonelik hizmeti, ters proxy'lerin arkasında ayarlanan URI'yi kullanacaktır."
+"fragment" = "Parçalanma (Fragmentation)"
+"fragmentDesc" = "TLS merhaba (hello) paketi için parçalanmayı etkinleştir"
+"fragmentSett" = "Parçalanma Ayarları"
+"noisesDesc" = "Gürültüleri Etkinleştir."
+"noisesSett" = "Gürültü Ayarları"
+"mux" = "Mux"
+"muxDesc" = "Kurulmuş bir veri akışı içinde birden çok bağımsız veri akışı iletin."
+"muxSett" = "Mux Ayarları"
+"direct" = "Doğrudan Bağlantı"
+"directDesc" = "Belirli bir ülkenin alan adları veya IP aralıkları ile doğrudan bağlantılar kurar."
 
-[pages.settings.toasts] #[cite: 1]
-"modifySettings" = "Ayarları Değiştir" #[cite: 1]
-"getSettings" = "Ayarları Al" #[cite: 1]
-"modifyUser" = "Yöneticiyi Değiştir" #[cite: 1]
-"originalUserPassIncorrect" = "Mevcut kullanıcı adı veya şifre hatalı" #[cite: 1]
-"userPassMustBeNotEmpty" = "Yeni kullanıcı adı veya şifre gerekli" #[cite: 1]
+[pages.settings.toasts]
+"modifySettings" = "Ayarları Değiştir"
+"getSettings" = "Ayarları Al"
+"modifyUser" = "Yöneticiyi Değiştir"
+"originalUserPassIncorrect" = "Mevcut kullanıcı adı veya şifre yanlış"
+"userPassMustBeNotEmpty" = "Yeni kullanıcı adı veya şifre gerekli"
 
-[pages.xray] #[cite: 1]
-"title" = "Xray Yapılandırmaları" #[cite: 1]
-"save" = "Kaydet" #[cite: 1]
-"restart" = "Xray'i Yeniden Başlat" #[cite: 1]
-"basicTemplate" = "Temel Bilgiler" #[cite: 1]
-"advancedTemplate" = "Gelişmiş" #[cite: 1]
-"generalConfigs" = "Genel Strateji" #[cite: 1]
-"generalConfigsDesc" = "Bu seçenekler genel strateji ayarlamalarını belirleyecektir." #[cite: 1]
-"logConfigs" = "Günlük Ayarları" #[cite: 1]
-"logConfigsDesc" = "Günlükleri etkinleştirmek sunucunuzun verimliliğini etkileyebilir. Yalnızca gerektiğinde akıllıca etkinleştirilmesi önerilir." #[cite: 1]
-"blockConfigs" = "Koruma Kalkanı" #[cite: 1]
-"blockConfigsDesc" = "Bu seçenekler, belirli istenen protokollere ve web sitelerine dayalı olarak trafiği engelleyecektir." #[cite: 1]
-"basicRouting" = "Temel Yönlendirme" #[cite: 1]
-"blockConnectionsConfigsDesc" = "Bu seçenekler, belirli istenen ülkeye dayalı olarak trafiği engelleyecektir." #[cite: 1]
-"directConnectionsConfigsDesc" = "Doğrudan bir bağlantı, belirli trafiğin başka bir sunucu üzerinden yönlendirilmemesini sağlar." #[cite: 1]
-"blockips" = "IP'leri Engelle" #[cite: 1]
-"blockdomains" = "Alan Adlarını Engelle" #[cite: 1]
-"directips" = "Doğrudan IP'ler" #[cite: 1]
-"directdomains" = "Doğrudan Alan Adları" #[cite: 1]
-"ipv4Routing" = "IPv4 Yönlendirmesi" #[cite: 1]
-"ipv4RoutingDesc" = "Bu seçenekler, sunucunun IPv4'ü üzerinden belirli istenen hedeflere dayalı olarak trafiği yönlendirecektir." #[cite: 1]
-"warpRouting" = "WARP Yönlendirmesi" #[cite: 1]
-"warpRoutingDesc" = "Bu seçenekler, WARP üzerinden belirli istenen hedeflere dayalı olarak trafiği yönlendirecektir." #[cite: 1]
-"Template" = "Gelişmiş Xray Yapılandırma Şablonu" #[cite: 1]
-"TemplateDesc" = "Nihai Xray yapılandırma dosyası bu şablona dayalı olarak oluşturulacaktır." #[cite: 1]
-"FreedomStrategy" = "Freedom Protokolü Stratejisi" #[cite: 1]
-"FreedomStrategyDesc" = "Freedom Protokolü'nde ağ için çıkış stratejisini ayarlayın." #[cite: 1]
-"RoutingStrategy" = "Genel Yönlendirme Stratejisi" #[cite: 1]
-"RoutingStrategyDesc" = "Tüm istekleri çözümlemek için genel trafik yönlendirme stratejisini ayarlayın." #[cite: 1]
-"Torrent" = "BitTorrent Protokolünü Engelle" #[cite: 1]
-"TorrentDesc" = "BitTorrent protokolünü engeller." #[cite: 1]
-"Family" = "Aile Koruması" #[cite: 1]
-"FamilyDesc" = "Yetişkinlere uygun içeriği ve kötü amaçlı yazılım web sitelerini engeller." #[cite: 1]
-"completeTemplate" = "Tümü" #[cite: 1]
-"Inbounds" = "Gelenler" #[cite: 1]
-"Outbounds" = "Gidenler" #[cite: 1]
-"Routings" = "Yönlendirme Kuralları" #[cite: 1]
-"RoutingsDesc" = "Her kuralın önceliği önemlidir!" #[cite: 1]
-"Balancers" = "Yük Dengeleyiciler (Balancers)" #[cite: 1]
-"logLevel" = "Günlük Seviyesi" #[cite: 1]
-"logLevelDesc" = "Günlük seviyesi, kaydedilmesi gereken sorunların ciddiyetini belirleyecektir." #[cite: 1]
-"accessLog" = "Erişim Günlüğü (Access Log)" #[cite: 1]
-"accessLogDesc" = "Erişim günlüğü için dosya yolu." #[cite: 1]
-"errorLog" = "Hata Günlüğü (Error Log)" #[cite: 1]
-"errorLogDesc" = "Hata günlüğü için dosya yolu." #[cite: 1]
-"dnsLog" = "DNS Günlüğü" #[cite: 1]
-"dnsLogDesc" = "DNS sorgu günlüklerinin etkinleştirilip etkinleştirilmeyeceği" #[cite: 1]
-"maskAddress" = "Adres Maskele" #[cite: 1]
-"maskAddressDesc" = "Etkinleştirildiğinde, IP adresi maskesi günlüklerde görünen IP adresini otomatik olarak değiştirecektir." #[cite: 1]
-"infoDesc" = "Burada yapılan her değişikliğin kaydedilmesi gerekir. Değişikliklerin etkili olması için lütfen XRAY'i yeniden başlatın." #[cite: 1]
+[pages.xray]
+"title" = "Xray Yapılandırmaları"
+"save" = "Kaydet"
+"restart" = "Xray'i Yeniden Başlat"
+"basicTemplate" = "Temel"
+"advancedTemplate" = "Gelişmiş"
+"generalConfigs" = "Genel Strateji"
+"generalConfigsDesc" = "Bu seçenekler genel strateji ayarlamalarını belirleyecektir."
+"logConfigs" = "Günlük (Log) Ayarları"
+"logConfigsDesc" = "Günlükleri etkinleştirmek sunucunuzun verimliliğini etkileyebilir. Sadece gerektiğinde akıllıca etkinleştirilmesi önerilir."
+"blockConfigs" = "Koruma Kalkanı"
+"blockConfigsDesc" = "Bu seçenekler, istenen belirli protokollere ve web sitelerine dayalı olarak trafiği engelleyecektir."
+"basicRouting" = "Temel Yönlendirme"
+"blockConnectionsConfigsDesc" = "Bu seçenekler, talep edilen belirli ülkelere dayalı olarak trafiği engelleyecektir."
+"directConnectionsConfigsDesc" = "Doğrudan bağlantı, belirli bir trafiğin başka bir sunucu üzerinden yönlendirilmemesini sağlar."
+"blockips" = "IP'leri Engelle"
+"blockdomains" = "Alan Adlarını Engelle"
+"directips" = "Doğrudan IP'ler"
+"directdomains" = "Doğrudan Alan Adları"
+"ipv4Routing" = "IPv4 Yönlendirme"
+"ipv4RoutingDesc" = "Bu seçenekler, trafiği sunucunun IPv4'ü aracılığıyla istenen belirli hedefe göre yönlendirecektir."
+"warpRouting" = "WARP Yönlendirme"
+"warpRoutingDesc" = "Bu seçenekler, trafiği WARP aracılığıyla istenen belirli hedefe göre yönlendirecektir."
+"Template" = "Gelişmiş Xray Yapılandırma Şablonu"
+"TemplateDesc" = "Nihai Xray yapılandırma dosyası bu şablona dayalı olarak oluşturulacaktır."
+"FreedomStrategy" = "Freedom Protokolü Stratejisi"
+"FreedomStrategyDesc" = "Freedom Protokolünde ağ için çıkış stratejisini ayarlayın."
+"RoutingStrategy" = "Genel Yönlendirme Stratejisi"
+"RoutingStrategyDesc" = "Tüm istekleri çözmek için genel trafik yönlendirme stratejisini ayarlayın."
+"Torrent" = "BitTorrent Protokolünü Engelle"
+"TorrentDesc" = "BitTorrent protokolünü engeller."
+"Family" = "Aile Koruması"
+"FamilyDesc" = "Yetişkinlere yönelik içerikleri ve kötü amaçlı yazılım barındıran web sitelerini engeller."
+"completeTemplate" = "Tümü"
+"Inbounds" = "Gelen Bağlantılar"
+"Outbounds" = "Giden Bağlantılar"
+"Routings" = "Yönlendirme Kuralları"
+"RoutingsDesc" = "Her kuralın önceliği önemlidir!"
+"Balancers" = "Yük Dengeleyiciler"
+"logLevel" = "Günlük Seviyesi"
+"logLevelDesc" = "Günlük seviyesi, kaydedilmesi gereken sorunların ciddiyetini belirleyecektir."
+"accessLog" = "Erişim Günlüğü (Access Log)"
+"accessLogDesc" = "Erişim günlüğü için dosya yolu."
+"errorLog" = "Hata Günlüğü (Error Log)"
+"errorLogDesc" = "Hata günlüğü için dosya yolu."
+"dnsLog" = "DNS Günlüğü"
+"dnsLogDesc" = "DNS sorgu günlüklerinin etkinleştirilip etkinleştirilmeyeceği"
+"maskAddress" = "Maske Adresi"
+"maskAddressDesc" = "IP adresi maskesi etkinleştirildiğinde, günlükte görünen IP adresini otomatik olarak değiştirecektir."
+"infoDesc" = "Burada yapılan her değişikliğin kaydedilmesi gerekir. Değişikliklerin etkili olması için lütfen XRAY'i yeniden başlatın."
 
-[pages.xray.rules] #[cite: 1]
-"infoDesc" = "Burada yapılan her değişikliğin etkili olması için kaydedilmesi gerekir." #[cite: 1]
-"first" = "İlk" #[cite: 1]
-"last" = "Son" #[cite: 1]
-"up" = "Yukarı" #[cite: 1]
-"down" = "Aşağı" #[cite: 1]
-"source" = "Kaynak" #[cite: 1]
-"dest" = "Hedef" #[cite: 1]
-"inbound" = "Gelen" #[cite: 1]
-"outbound" = "Giden" #[cite: 1]
-"info" = "Bilgi" #[cite: 1]
-"add" = "Kural Ekle" #[cite: 1]
-"edit" = "Kuralı Düzenle" #[cite: 1]
-"useComma" = "Virgülle ayrılmış öğeler" #[cite: 1]
-"balancer" = "Yük Dengeleyici (Balancer)" #[cite: 1]
+[pages.xray.rules]
+"infoDesc" = "Etkili olması için burada yapılan her değişikliğin kaydedilmesi gerekir."
+"first" = "İlk"
+"last" = "Son"
+"up" = "Yukarı"
+"down" = "Aşağı"
+"source" = "Kaynak"
+"dest" = "Hedef"
+"inbound" = "Gelen"
+"outbound" = "Giden"
+"info" = "Bilgi"
+"add" = "Kural Ekle"
+"edit" = "Kuralı Düzenle"
+"useComma" = "Virgülle ayrılmış öğeler"
+"balancer" = "Yük Dengeleyici (Balancer)"
 
-[pages.xray.outbound] #[cite: 1]
-"addOutbound" = "Giden Ekle" #[cite: 1]
-"editOutbound" = "Gideni Düzenle" #[cite: 1]
-"tag" = "Etiket" #[cite: 1]
-"tagDesc" = "Benzersiz Etiket" #[cite: 1]
-"domain" = "Alan Adı" #[cite: 1]
-"type" = "Tür" #[cite: 1]
-"settings" = "Ayarlar" #[cite: 1]
-"accountInfo" = "Hesap Bilgileri" #[cite: 1]
-"outboundStatus" = "Giden Durumu" #[cite: 1]
-"reverseTag" = "Ters Etiket" #[cite: 1]
-"reverseTagDesc" = "Bu VLESS istemcisinin kullandığı ters proxy geleninin etiketi." #[cite: 1]
-"reverseTagPlaceholder" = "ters-gelen-etiketi" #[cite: 1]
-"sendThrough" = "Üzerinden Gönder" #[cite: 1]
-"advanced" = "Gelişmiş" #[cite: 1]
-"linkConverter" = "Bağlantı dönüştürücü" #[cite: 1]
-"jsonFreeEditor" = "JSON serbest düzenleyici" #[cite: 1]
+[pages.xray.outbound]
+"addOutbound" = "Giden Bağlantı Ekle"
+"editOutbound" = "Giden Bağlantıyı Düzenle"
+"tag" = "Etiket"
+"tagDesc" = "Benzersiz Etiket"
+"domain" = "Alan Adı"
+"type" = "Tür"
+"settings" = "Ayarlar"
+"accountInfo" = "Hesap Bilgileri"
+"outboundStatus" = "Giden Bağlantı Durumu"
+"reverseTag" = "Ters (Reverse) Etiket"
+"reverseTagDesc" = "Bu VLESS istemcisinin kullandığı ters proxy gelen bağlantı etiketi."
+"reverseTagPlaceholder" = "ters-gelen-etiketi"
+"sendThrough" = "Şuradan Gönder (Send Through)"
+"advanced" = "Gelişmiş"
+"linkConverter" = "Bağlantı dönüştürücü"
+"jsonFreeEditor" = "JSON serbest editör"
 
-[pages.xray.balancer] #[cite: 1]
-"addBalancer" = "Yük Dengeleyici Ekle" #[cite: 1]
-"editBalancer" = "Yük Dengeleyiciyi Düzenle" #[cite: 1]
-"balancerStrategy" = "Strateji" #[cite: 1]
-"balancerSelectors" = "Seçiciler" #[cite: 1]
-"fallback" = "Geri Dönüş (Fallback)" #[cite: 1]
-"tag" = "Etiket" #[cite: 1]
-"tagDesc" = "Benzersiz Etiket" #[cite: 1]
-"balancerDesc" = "Aynı anda hem balancerTag hem de outboundTag kullanmak mümkün değildir. İkisi birlikte kullanılırsa, yalnızca outboundTag çalışacaktır." #[cite: 1]
+[pages.xray.balancer]
+"addBalancer" = "Yük Dengeleyici Ekle"
+"editBalancer" = "Yük Dengeleyiciyi Düzenle"
+"balancerStrategy" = "Strateji"
+"balancerSelectors" = "Seçiciler"
+"fallback" = "Geri Çekilme (Fallback)"
+"tag" = "Etiket"
+"tagDesc" = "Benzersiz Etiket"
+"balancerDesc" = "balancerTag ve outboundTag'ı aynı anda kullanmak mümkün değildir. İkisi birlikte kullanılırsa sadece outboundTag çalışacaktır."
 
-[pages.xray.wireguard] #[cite: 1]
-"secretKey" = "Gizli Anahtar (Secret Key)" #[cite: 1]
-"publicKey" = "Açık Anahtar (Public Key)" #[cite: 1]
-"allowedIPs" = "İzin Verilen IP'ler" #[cite: 1]
-"endpoint" = "Uç Nokta (Endpoint)" #[cite: 1]
-"psk" = "Önceden Paylaşılmış Anahtar (PSK)" #[cite: 1]
-"domainStrategy" = "Alan Adı Stratejisi" #[cite: 1]
+[pages.xray.wireguard]
+"secretKey" = "Gizli Anahtar (Secret Key)"
+"publicKey" = "Açık Anahtar (Public Key)"
+"allowedIPs" = "İzin Verilen IP'ler"
+"endpoint" = "Uç Nokta (Endpoint)"
+"psk" = "Önceden Paylaşılmış Anahtar (PSK)"
+"domainStrategy" = "Alan Adı Stratejisi"
 
-[pages.xray.tun] #[cite: 1]
-"nameDesc" = "TUN arayüzünün adı. Varsayılan 'xrayN'dir, burada N bir sayıdır" #[cite: 1]
-"mtuDesc" = "Maksimum İletim Birimi (MTU). Veri paketlerinin maksimum boyutu. Varsayılan 1500'dür" #[cite: 1]
-"userLevel" = "Kullanıcı Seviyesi" #[cite: 1]
-"userLevelDesc" = "Bu gelen bağlantı üzerinden kurulan tüm bağlantılar bu kullanıcı seviyesini kullanacaktır. Varsayılan 0'dır" #[cite: 1]
+[pages.xray.tun]
+"nameDesc" = "TUN arayüzünün adı. Varsayılan 'xrayN' dir, burada N bir sayıdır"
+"mtuDesc" = "Maksimum İletim Birimi. Veri paketlerinin maksimum boyutu. Varsayılan 1500'dür"
+"userLevel" = "Kullanıcı Seviyesi"
+"userLevelDesc" = "Bu gelen bağlantı üzerinden yapılan tüm bağlantılar bu kullanıcı seviyesini kullanacaktır. Varsayılan 0'dır"
 
-[pages.xray.metrics] #[cite: 1]
-"title" = "Metrikler" #[cite: 1]
-"desc" = "Prometheus/Grafana kazıması (scraping) için çekirdek istatistiklerini açığa çıkarır." #[cite: 1]
-"enableDesc" = "Metrik uç noktasını etkinleştirir." #[cite: 1]
-"listenDesc" = "Metrik uç noktası için Adres:port (örn. 127.0.0.1:11111)." #[cite: 1]
-"tag" = "Giden Etiketi" #[cite: 1]
-"tagDesc" = "Metrik uç noktası için benzersiz giden etiketi." #[cite: 1]
+[pages.xray.metrics]
+"title" = "Metrikler"
+"desc" = "Prometheus/Grafana kazıması (scraping) için temel istatistikleri sunar."
+"enableDesc" = "Metrikler uç noktasını (endpoint) etkinleştirir."
+"listenDesc" = "Metrikler uç noktası için adres:port (örn. 127.0.0.1:11111)."
+"tag" = "Giden Bağlantı Etiketi"
+"tagDesc" = "Metrikler uç noktası için benzersiz giden etiket."
 
-[pages.xray.dns] #[cite: 1]
-"enable" = "DNS'i Etkinleştir" #[cite: 1]
-"enableDesc" = "Yerleşik DNS sunucusunu etkinleştirir." #[cite: 1]
-"tag" = "DNS Gelen Etiketi" #[cite: 1]
-"tagDesc" = "Bu etiket, yönlendirme kurallarında bir Gelen etiketi olarak mevcut olacaktır." #[cite: 1]
-"strategy" = "Sorgu Stratejisi" #[cite: 1]
-"strategyDesc" = "Alan adlarını çözümlemek için genel strateji." #[cite: 1]
-"add" = "Sunucu Ekle" #[cite: 1]
-"edit" = "Sunucuyu Düzenle" #[cite: 1]
-"domains" = "Alan Adları" #[cite: 1]
-"expectIPs" = "Beklenen IP'ler" #[cite: 1]
-"skipFallback" = "Geri Dönüşü Atla" #[cite: 1]
-"hosts" = "Sunucular (Hosts)" #[cite: 1]
-"hostsDesc" = "Bir alan adını statik IP'lere veya başka bir alan adına eşleyin (virgülle ayrılmış)." #[cite: 1]
-"addHost" = "Sunucu Ekle" #[cite: 1]
+[pages.xray.dns]
+"enable" = "DNS'i Etkinleştir"
+"enableDesc" = "Yerleşik DNS sunucusunu etkinleştirir."
+"tag" = "DNS Gelen Bağlantı Etiketi"
+"tagDesc" = "Bu etiket, yönlendirme kurallarında Gelen Bağlantı (Inbound) etiketi olarak mevcut olacaktır."
+"strategy" = "Sorgu Stratejisi"
+"strategyDesc" = "Alan adlarını çözmek için genel strateji."
+"add" = "Sunucu Ekle"
+"edit" = "Sunucuyu Düzenle"
+"domains" = "Alan Adları"
+"expectIPs" = "Beklenen IP'ler"
+"skipFallback" = "Geri Çekilmeyi (Fallback) Atla"
+"hosts" = "Sunucular (Hosts)"
+"hostsDesc" = "Bir alan adını statik IP'lere veya başka bir alan adına eşleyin (virgülle ayrılmış)."
+"addHost" = "Sunucu (Host) Ekle"
 
-[pages.xray.fakedns] #[cite: 1]
-"add" = "Sahte (Fake) DNS Ekle" #[cite: 1]
-"edit" = "Sahte DNS'i Düzenle" #[cite: 1]
-"ipPool" = "IP Havuzu Alt Ağı (Subnet)" #[cite: 1]
-"poolSize" = "Havuz Boyutu" #[cite: 1]
+[pages.xray.fakedns]
+"add" = "Sahte DNS (Fake DNS) Ekle"
+"edit" = "Sahte DNS Düzenle"
+"ipPool" = "IP Havuzu Alt Ağı (Subnet)"
+"poolSize" = "Havuz Boyutu"
 
-[pages.xray.geodata] #[cite: 1]
-"title" = "GeoData" #[cite: 1]
-"enable" = "GeoData'yı Etkinleştir" #[cite: 1]
-"enableDesc" = "Geodata dosyalarını bir programa göre yeniden yükleyin ve yeniden yüklemeden önce yeni .dat dosyalarını indirin." #[cite: 1]
-"cron" = "Cron Programı" #[cite: 1]
-"cronDesc" = "Yerel saatte 5 alanlı cron ifadesi, örn. her gün 04:00 için 0 4 * * *. Programı devre dışı bırakmak için boş bırakın." #[cite: 1]
-"outbound" = "İndirme Giden Bağlantısı" #[cite: 1]
-"outboundDesc" = "Geodata indirilirken kullanılan giden etiketi. Boş olması, yolu yönlendirmenin belirlediği anlamına gelir." #[cite: 1]
-"addAsset" = "Varlık Ekle" #[cite: 1]
-"editAsset" = "Varlığı Düzenle" #[cite: 1]
-"url" = "URL" #[cite: 1]
-"file" = "Dosya" #[cite: 1]
+[pages.xray.geodata]
+"title" = "GeoData"
+"enable" = "GeoData'yı Etkinleştir"
+"enableDesc" = "Geodata dosyalarını bir programa göre yeniden yükle ve yeniden yüklemeden önce yeni .dat dosyalarını indir."
+"cron" = "Cron Programı"
+"cronDesc" = "Yerel saatte 5 alanlı cron ifadesi, örn. her gün 04:00 için 0 4 * * * . Programı devre dışı bırakmak için boş bırakın."
+"outbound" = "İndirme Giden Bağlantısı"
+"outboundDesc" = "Geodata indirilirken kullanılan giden etiket. Boş olması rotanın yolu belirleyeceği anlamına gelir."
+"addAsset" = "Varlık (Asset) Ekle"
+"editAsset" = "Varlığı Düzenle"
+"url" = "URL"
+"file" = "Dosya"
 
-[tgbot] #[cite: 1]
-"noResult" = "❗ Sonuç yok!" #[cite: 1]
-"wentWrong" = "❌ Bir şeyler ters gitti!" #[cite: 1]
-"noInbounds" = "❗ Gelen bağlantı bulunamadı!" #[cite: 1]
-"unlimited" = "♾ Sınırsız" #[cite: 1]
-"days" = "Gün" #[cite: 1]
-"unknown" = "Bilinmeyen" #[cite: 1]
-"inbounds" = "Gelenler" #[cite: 1]
-"clients" = "İstemciler" #[cite: 1]
+[tgbot]
+"noResult" = "❗ Sonuç yok!"
+"wentWrong" = "❌ Bir şeyler ters gitti!"
+"noInbounds" = "❗ Gelen bağlantı bulunamadı!"
+"unlimited" = "♾ Sınırsız"
+"days" = "Gün"
+"unknown" = "Bilinmeyen"
+"inbounds" = "Gelen Bağlantılar"
+"clients" = "İstemciler"
 
-[tgbot.commands] #[cite: 1]
-"unknown" = "❗️Bilinmeyen komut" #[cite: 1]
-"pleaseChoose" = "👇 Lütfen seçin:\r\n" #[cite: 1]
-"help" = "🤖 Bu bota hoş geldiniz! Size web panelinden belirli verileri sağlamak için tasarlanmıştır ve gerektiğinde değişiklik yapmanıza olanak tanır.\r\n\r\n" #[cite: 1]
-"start" = "👋 Merhaba <i>{{ .Firstname }}</i>.\r\n" #[cite: 1]
-"welcome" = "🤖 <b>{{ .Hostname }}</b> yönetim botuna hoş geldiniz.\r\n" #[cite: 1]
-"status" = "✅ Bot sorunsuz çalışıyor!" #[cite: 1]
-"usage" = "❗️ Lütfen aramak için bir metin girin!" #[cite: 1]
-"getID" = "🆔 ID'niz: <code>{{ .ID }}</code>" #[cite: 1]
-"helpAdminCommands" = "Bir istemci e-postası arayın:\r\n<code>/Usage [Email]</code>\r\n\r\nGelen bağlantıları arayın (istemci istatistikleriyle birlikte):\r\n<code>/inbound [Açıklama]</code>" #[cite: 1]
-"helpClientCommands" = "İstatistikleri aramak için şu komutu kullanmanız yeterlidir:\r\n\r\n<code>/Usage [UUID|Şifre]</code>\r\n\r\nVMess/VLESS için UUID, Trojan/Shadowsocks için Şifre kullanın." #[cite: 1]
+[tgbot.commands]
+"unknown" = "❗️Bilinmeyen komut"
+"pleaseChoose" = "👇 Lütfen seçin:\r\n"
+"help" = "🤖 Bu bota hoş geldiniz! Size web panelinden belirli verileri sağlamak için tasarlanmıştır ve gerektiğinde değişiklik yapmanıza olanak tanır.\r\n\r\n"
+"start" = "👋 Merhaba <i>{{ .Firstname }}</i>.\r\n"
+"welcome" = "🤖 <b>{{ .Hostname }}</b> yönetim botuna hoş geldiniz.\r\n"
+"status" = "✅ Bot sorunsuz çalışıyor!"
+"usage" = "❗️ Lütfen aramak için bir metin girin!"
+"getID" = "🆔 ID'niz: <code>{{ .ID }}</code>"
+"helpAdminCommands" = "Bir istemci e-postası arayın:\r\n<code>/Usage [E-posta]</code>\r\n\r\nGelen bağlantıları arayın (istemci istatistikleriyle):\r\n<code>/inbound [Açıklama]</code>"
+"helpClientCommands" = "İstatistikleri aramak için sadece şu komutu kullanın:\r\n\r\n<code>/Usage [UUID|Şifre]</code>\r\n\r\nVMess/VLESS için UUID, Trojan/Shadowsocks için Şifre kullanın."
 
-[tgbot.messages] #[cite: 1]
-"cpuThreshold" = "🔴 CPU yükü {{ .Percent }}% {{ .Threshold }}% eşiğini aşıyor" #[cite: 1]
-"loginSuccess" = "✅ Web paneline başarıyla giriş yapıldı.\r\n" #[cite: 1]
-"loginFailed" = "❗Web paneline giriş başarısız.\r\n" #[cite: 1]
-"report" = "🕰 Zamanlanmış raporlar: {{ .RunTime }}\r\n" #[cite: 1]
-"datetime" = "⏰ Tarih&Saat: {{ .DateTime }}\r\n" #[cite: 1]
-"hostname" = "💻 Sunucu: {{ .Hostname }}\r\n" #[cite: 1]
-"version" = "🚀 X-UI: {{ .Version }}\r\n" #[cite: 1]
-"ipv6" = "🌐 IPv6: {{ .IPv6 }}\r\n" #[cite: 1]
-"ipv4" = "🌐 IPv4: {{ .IPv4 }}\r\n" #[cite: 1]
-"ip" = "🌐 IP: {{ .IP }}\r\n" #[cite: 1]
-"serverUpTime" = "⏳ Çalışma Süresi: {{ .UpTime }} {{ .Unit }}\r\n" #[cite: 1]
-"serverLoad" = "📈 Sistem Yükü: {{ .Load1 }}, {{ .Load2 }}, {{ .Load3 }}\r\n" #[cite: 1]
-"serverMemory" = "📋 RAM: {{ .Current }}/{{ .Total }}\r\n" #[cite: 1]
-"tcpCount" = "🔹 TCP: {{ .Count }}\r\n" #[cite: 1]
-"udpCount" = "🔸 UDP: {{ .Count }}\r\n" #[cite: 1]
-"traffic" = "🚦 Trafik: {{ .Total }} (↑{{ .Upload }},↓{{ .Download }})\r\n" #[cite: 1]
-"xrayStatus" = "ℹ️ Durum: {{ .State }}\r\n" #[cite: 1]
-"username" = "👤 Kullanıcı Adı: {{ .Username }}\r\n" #[cite: 1]
-"time" = "⏰ Zaman: {{ .Time }}\r\n" #[cite: 1]
-"inbound" = "📍 Gelen: {{ .Remark }}\r\n" #[cite: 1]
-"port" = "🔌 Port: {{ .Port }}\r\n" #[cite: 1]
-"expire" = "📅 Bitiş tarihi: {{ .DateTime }}\r\n \r\n" #[cite: 1]
-"expireIn" = "📅 Kalan süre: {{ .Time }}\r\n \r\n" #[cite: 1]
-"active" = "💡 Aktif: {{ .Enable }}\r\n" #[cite: 1]
-"online" = "🌐 Bağlantı durumu: {{ .Status }}\r\n" #[cite: 1]
-"email" = "📧 E-posta: {{ .Email }}\r\n" #[cite: 1]
-"upload" = "🔼 Yükleme↑: {{ .Upload }}\r\n" #[cite: 1]
-"download" = "🔽 İndirme↓: {{ .Download }}\r\n" #[cite: 1]
-"total" = "🔄 Toplam: {{ .UpDown }} / {{ .Total }}\r\n" #[cite: 1]
-"exhaustedMsg" = "🚨 Tükenen {{ .Type }}:\r\n" #[cite: 1]
-"exhaustedCount" = "🚨 Tükenen {{ .Type }} Sayısı:\r\n" #[cite: 1]
-"onlinesCount" = "🌐 Çevrimiçi istemciler: {{ .Count }}\r\n" #[cite: 1]
-"disabled" = "🛑 Devre Dışı: {{ .Disabled }}\r\n" #[cite: 1]
-"depleteSoon" = "🔜 Yakında tükenecekler: {{ .Deplete }}\r\n \r\n" #[cite: 1]
-"backupTime" = "🗄 Yedekleme zamanı: {{ .Time }}\r\n" #[cite: 1]
-"yes" = "✅ Evet" #[cite: 1]
-"no" = "❌ Hayır" #[cite: 1]
+[tgbot.messages]
+"cpuThreshold" = "🔴 CPU yükü {{ .Percent }}%, %{{ .Threshold }} eşiğini aşıyor"
+"loginSuccess" = "✅ Web paneline başarıyla giriş yapıldı.\r\n"
+"loginFailed" = "❗Web paneline giriş başarısız oldu.\r\n"
+"report" = "🕰 Zamanlanmış raporlar: {{ .RunTime }}\r\n"
+"datetime" = "⏰ Tarih ve Saat: {{ .DateTime }}\r\n"
+"hostname" = "💻 Sunucu (Host): {{ .Hostname }}\r\n"
+"version" = "🚀 X-UI: {{ .Version }}\r\n"
+"ipv6" = "🌐 IPv6: {{ .IPv6 }}\r\n"
+"ipv4" = "🌐 IPv4: {{ .IPv4 }}\r\n"
+"ip" = "🌐 IP: {{ .IP }}\r\n"
+"serverUpTime" = "⏳ Çalışma Süresi: {{ .UpTime }} {{ .Unit }}\r\n"
+"serverLoad" = "📈 Sistem yükü: {{ .Load1 }}, {{ .Load2 }}, {{ .Load3 }}\r\n"
+"serverMemory" = "📋 RAM: {{ .Current }}/{{ .Total }}\r\n"
+"tcpCount" = "🔹 TCP: {{ .Count }}\r\n"
+"udpCount" = "🔸 UDP: {{ .Count }}\r\n"
+"traffic" = "🚦 Trafik: {{ .Total }} (↑{{ .Upload }},↓{{ .Download }})\r\n"
+"xrayStatus" = "ℹ️ Durum: {{ .State }}\r\n"
+"username" = "👤 Kullanıcı Adı: {{ .Username }}\r\n"
+"time" = "⏰ Zaman: {{ .Time }}\r\n"
+"inbound" = "📍 Gelen Bağlantı: {{ .Remark }}\r\n"
+"port" = "🔌 Port: {{ .Port }}\r\n"
+"expire" = "📅 Sona erme tarihi: {{ .DateTime }}\r\n \r\n"
+"expireIn" = "📅 Kalan süre: {{ .Time }}\r\n \r\n"
+"active" = "💡 Aktif: {{ .Enable }}\r\n"
+"online" = "🌐 Bağlantı durumu: {{ .Status }}\r\n"
+"email" = "📧 E-posta: {{ .Email }}\r\n"
+"upload" = "🔼 Yükleme↑: {{ .Upload }}\r\n"
+"download" = "🔽 İndirme↓: {{ .Download }}\r\n"
+"total" = "🔄 Toplam: {{ .UpDown }} / {{ .Total }}\r\n"
+"exhaustedMsg" = "🚨 Tükenen {{ .Type }}:\r\n"
+"exhaustedCount" = "🚨 Tükenen {{ .Type }} Sayısı:\r\n"
+"onlinesCount" = "🌐 Çevrimiçi istemciler: {{ .Count }}\r\n"
+"disabled" = "🛑 Devre dışı: {{ .Disabled }}\r\n"
+"depleteSoon" = "🔜 Yakında tükenecek: {{ .Deplete }}\r\n \r\n"
+"backupTime" = "🗄 Yedekleme zamanı: {{ .Time }}\r\n"
+"yes" = "✅ Evet"
+"no" = "❌ Hayır"
 
-[tgbot.buttons] #[cite: 1]
-"dbBackup" = "Yedek Al" #[cite: 1]
-"serverUsage" = "Sistem Kullanımı" #[cite: 1]
-"getInbounds" = "Gelenleri Al" #[cite: 1]
-"depleteSoon" = "Yakında Tükenecekler" #[cite: 1]
-"clientUsage" = "Kullanımı Al" #[cite: 1]
-"onlines" = "Çevrimiçi İstemciler" #[cite: 1]
-"commands" = "Komutlar" #[cite: 1]
+[tgbot.buttons]
+"dbBackup" = "Yedek Al"
+"serverUsage" = "Sistem Kullanımı"
+"getInbounds" = "Gelen Bağlantıları Al"
+"depleteSoon" = "Yakında Tükenecekler"
+"clientUsage" = "Kullanımı Al"
+"onlines" = "Çevrimiçi İstemciler"
+"commands" = "Komutlar"
 
-[tgbot.answers] #[cite: 1]
-"getInboundsFailed" = "❌ Gelen bağlantılar alınamadı" #[cite: 1]
-"askToAddUser" = "Yapılandırmanız bulunamadı!\r\nLütfen bir Telegram kullanıcı adı belirleyin ve servis yöneticisinden bunu yapılandırmaya (veya yapılandırmalara) eklemesini isteyin." #[cite: 1]
-"askToAddUserName" = "Yapılandırmanız bulunamadı!\r\nLütfen servis yöneticisinden Telegram kullanıcı adınızı yapılandırmaya (veya yapılandırmalara) eklemesini isteyin.\r\n\r\nKullanıcı Adınız: <b>@{{ .TgUserName }}</b>" #[cite: 1]
+[tgbot.answers]
+"getInboundsFailed" = "❌ Gelen bağlantılar alınamadı"
+"askToAddUser" = "Yapılandırmanız bulunamadı!\r\nLütfen bir Telegram kullanıcı adı belirleyin ve ardından hizmet yöneticisinden bunu yapılandırma(lar)a eklemesini isteyin."
+"askToAddUserName" = "Yapılandırmanız bulunamadı!\r\nLütfen hizmet yöneticisinden Telegram kullanıcı adınızı yapılandırma(lar)a eklemesini isteyin.\r\n\r\nKullanıcı Adınız: <b>@{{ .TgUserName }}</b>"
