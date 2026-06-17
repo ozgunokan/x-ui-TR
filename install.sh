@@ -1,8 +1,8 @@
 #!/bin/bash
 
-red='\033;31m'
-green='\033;32m'
-yellow='\033;33m'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
 plain='\033[0m'
 
 cur_dir=$(pwd)
@@ -36,8 +36,7 @@ arch() {
     esac
 }
 
-ARCH_TYPE=$(arch)
-echo "arch: $ARCH_TYPE"
+echo "arch: $(arch)"
 
 install_dependencies() {
     case "${release}" in
@@ -51,7 +50,7 @@ install_dependencies() {
         dnf -y update && dnf install -y -q wget curl tar tzdata cronie
         ;;
     arch | manjaro | parch)
-        pacman -Syu --noconfirm wget curl tar tzdata cronie
+        pacman -Syu && pacman -Syu --noconfirm wget curl tar tzdata cronie
         ;;
     opensuse-tumbleweed)
         zypper refresh && zypper -q install -y wget curl tar timezone cron
@@ -69,12 +68,12 @@ gen_random_string() {
 }
 
 config_after_install() {
-    local existing_username=$(/usr/local/x-ui/x-ui setting -show true | grep -Ei 'username:' | awk '{print $2}' | tr -d '\r')
-    local existing_password=$(/usr/local/x-ui/x-ui setting -show true | grep -Ei 'password:' | awk '{print $2}' | tr -d '\r')
-    local existing_webBasePath=$(/usr/local/x-ui/x-ui setting -show true | grep -Ei 'webBasePath:' | awk '{print $2}' | tr -d '\r')
+    local existing_username=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'username: .+' | awk '{print $2}')
+    local existing_password=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'password: .+' | awk '{print $2}')
+    local existing_webBasePath=$(/usr/local/x-ui/x-ui setting -show true | grep -Eo 'webBasePath: .+' | awk '{print $2}')
 
     if [[ ${#existing_webBasePath} -lt 4 ]]; then
-        if [[ "$existing_username" == "admin" && "$existing_password" == "admin" || -z "$existing_username" ]]; then
+        if [[ "$existing_username" == "admin" && "$existing_password" == "admin" ]]; then
             local config_webBasePath=$(gen_random_string 15)
             local config_username=$(gen_random_string 10)
             local config_password=$(gen_random_string 10)
@@ -94,14 +93,14 @@ config_after_install() {
             echo -e "${green}Username: ${config_username}${plain}"
             echo -e "${green}Password: ${config_password}${plain}"
             echo -e "${green}Port: ${config_port}${plain}"
-            echo -e "${green}WebBasePath: /${config_webBasePath}/${plain}"
+            echo -e "${green}WebBasePath: ${config_webBasePath}${plain}"
             echo -e "###############################################"
             echo -e "${yellow}If you forgot your login info, you can type 'x-ui settings' to check${plain}"
         else
             local config_webBasePath=$(gen_random_string 15)
             echo -e "${yellow}WebBasePath is missing or too short. Generating a new one...${plain}"
             /usr/local/x-ui/x-ui setting -webBasePath "${config_webBasePath}"
-            echo -e "${green}New WebBasePath: /${config_webBasePath}/${plain}"
+            echo -e "${green}New WebBasePath: ${config_webBasePath}${plain}"
         fi
     else
         if [[ "$existing_username" == "admin" && "$existing_password" == "admin" ]]; then
@@ -125,11 +124,12 @@ config_after_install() {
 }
 
 install_x-ui() {
+    # checks if the installation backup dir exist. if existed then ask user if they want to restore it else continue installation.
     if [[ -e /usr/local/x-ui-backup/ ]]; then
-        read -p "Failed installation detected. Do you want to restore previously installed version? [y/n]? " restore_confirm
+        read -p "Failed installation detected. Do you want to restore previously installed version? [y/n]? ": restore_confirm
         if [[ "${restore_confirm}" == "y" || "${restore_confirm}" == "Y" ]]; then
             systemctl stop x-ui
-            [[ -f /usr/local/x-ui-backup/x-ui.db ]] && mv /usr/local/x-ui-backup/x-ui.db /etc/x-ui/ -f
+            mv /usr/local/x-ui-backup/x-ui.db /etc/x-ui/ -f
             mv /usr/local/x-ui-backup/ /usr/local/x-ui/ -f
             systemctl start x-ui
             echo -e "${green}previous installed x-ui restored successfully${plain}, it is up and running now..."
@@ -148,49 +148,51 @@ install_x-ui() {
             exit 1
         fi
         echo -e "Got x-ui latest version: ${last_version}, beginning the installation..."
-        url="https://github.com/ozgunokan/x-ui-TR/releases/download/${last_version}/x-ui-linux-${ARCH_TYPE}.tar.gz"
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(arch).tar.gz https://github.com/ozgunokan/x-ui-TR/releases/download/${last_version}/x-ui-linux-$(arch).tar.gz
+        if [[ $? -ne 0 ]]; then
+            echo -e "${red}Downloading x-ui failed, please be sure that your server can access Github ${plain}"
+            exit 1
+        fi
     else
         last_version=$1
-        url="https://github.com/ozgunokan/x-ui-TR/releases/download/${last_version}/x-ui-linux-${ARCH_TYPE}.tar.gz"
+        url="https://github.com/ozgunokan/x-ui-TR/releases/download/${last_version}/x-ui-linux-$(arch).tar.gz"
         echo -e "Beginning to install x-ui $1"
-    fi
-
-    wget -N --no-check-certificate -O /usr/local/x-ui-linux-${ARCH_TYPE}.tar.gz ${url}
-    if [[ $? -ne 0 ]]; then
-        echo -e "${red}Downloading x-ui failed, please be sure that your server can access Github ${plain}"
-        exit 1
+        wget -N --no-check-certificate -O /usr/local/x-ui-linux-$(arch).tar.gz ${url}
+        if [[ $? -ne 0 ]]; then
+            echo -e "${red}download x-ui $1 failed,please check the version exists${plain}"
+            exit 1
+        fi
     fi
 
     if [[ -e /usr/local/x-ui/ ]]; then
         systemctl stop x-ui
-        rm -rf /usr/local/x-ui-backup/
         mv /usr/local/x-ui/ /usr/local/x-ui-backup/ -f
-        [[ -d /etc/x-ui ]] && cp -rf /etc/x-ui/x-ui.db /usr/local/x-ui-backup/ 2>/dev/null
+        cp /etc/x-ui/x-ui.db /usr/local/x-ui-backup/ -f
     fi
 
-    tar zxvf x-ui-linux-${ARCH_TYPE}.tar.gz
-    rm x-ui-linux-${ARCH_TYPE}.tar.gz -f
+    tar zxvf x-ui-linux-$(arch).tar.gz
+    rm x-ui-linux-$(arch).tar.gz -f
     cd x-ui
     chmod +x x-ui
 
-    if [[ "${ARCH_TYPE}" == "armv7" ]]; then
-        if [[ -f "bin/xray-linux-armv7" ]]; then
-            mv bin/xray-linux-armv7 bin/xray-linux-arm
-        fi
-        [[ -f "bin/xray-linux-arm" ]] && chmod +x bin/xray-linux-arm
-    else
-        [[ -f "bin/xray-linux-${ARCH_TYPE}" ]] && chmod +x bin/xray-linux-${ARCH_TYPE}
+    # Check the system's architecture and rename the file accordingly
+    if [[ $(arch) == "armv7" ]]; then
+        mv bin/xray-linux-$(arch) bin/xray-linux-arm
+        chmod +x bin/xray-linux-arm
     fi
-    
-    chmod +x x-ui
-    [[ -f "x-ui.service" ]] && cp -f x-ui.service /etc/systemd/system/
-    
+    chmod +x x-ui bin/xray-linux-$(arch)
+    cp -f x-ui.service /etc/systemd/system/
     wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/ozgunokan/x-ui-TR/main/x-ui.sh
+    chmod +x /usr/local/x-ui/x-ui.sh
     chmod +x /usr/bin/x-ui
-
     config_after_install
     rm /usr/local/x-ui-backup/ -rf
-    
+    #echo -e "If it is a new installation, the default web port is ${green}54321${plain}, The username and password are ${green}admin${plain} by default"
+    #echo -e "Please make sure that this port is not occupied by other procedures,${yellow} And make sure that port 54321 has been released${plain}"
+    #    echo -e "If you want to modify the 54321 to other ports and enter the x-ui command to modify it, you must also ensure that the port you modify is also released"
+    #echo -e ""
+    #echo -e "If it is updated panel, access the panel in your previous way"
+    #echo -e ""
     systemctl daemon-reload
     systemctl enable x-ui
     systemctl start x-ui
