@@ -36,7 +36,7 @@
 ## Install & Upgrade to Latest Version
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/ozgunokan/x-ui/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/ozgunokan/x-ui-TR/main/install.sh)
 ```
 
 ## Manual Install & Upgrade
