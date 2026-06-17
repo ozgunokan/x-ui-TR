@@ -24,6 +24,11 @@ const supportLangs = [
         value: 'vi-VN',
         icon: '🇻🇳',        
     },
+    {
+        name: 'Türkçe',
+        value: 'tr_TR',
+        icon: '🇹🇷',        
+    },
 ];
 
 function getLang() {
