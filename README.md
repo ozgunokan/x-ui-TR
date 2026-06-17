@@ -36,15 +36,7 @@
 ## Install & Upgrade to Latest Version
 
 ```sh
-bash <(curl -Ls https://raw.githubusercontent.com/alireza0/x-ui/master/install.sh)
-```
-
-## Install Legacy Version
-
-**Step 1:** To install an old version, use following installation command. e.g., version `1.8.0`:
-
-```sh
-VERSION=1.8.0 && bash <(curl -Ls "https://raw.githubusercontent.com/alireza0/x-ui/$VERSION/install.sh") $VERSION
+bash <(curl -Ls https://raw.githubusercontent.com/ozgunokan/x-ui/main/install.sh)
 ```
 
 ## Manual Install & Upgrade
@@ -166,6 +158,7 @@ docker build -t x-ui .
 - Farsi
 - Russian
 - Vietnamese
+- Turkish
 
 ## Features
 
