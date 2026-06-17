@@ -1,677 +1,1237 @@
-<!DOCTYPE html>
-<html lang="en">
-{{template "head" .}}
-<style>
-    @media (min-width: 769px) {
-        .ant-layout-content {
-            margin: 24px 16px;
-        }
-        .ant-card-hoverable {
-            margin-inline: 0.3rem;
-        }
-    }
+#!/bin/bash
 
-    .ant-col-sm-24 {
-        margin-top: 10px;
-    }
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
 
-    .ant-card-dark h2 {
-        color: hsla(0,0%,100%,.65);
-    }
-</style>
-<body>
-<a-layout id="app" v-cloak :class="themeSwitcher.currentTheme">
-    {{ template "commonSider" . }}
-    <a-layout id="content-layout">
-        <a-layout-content>
-            <a-spin :spinning="spinning" :delay="200" :tip="loadingTip"/>
-            <transition name="list" appear>
-                <a-alert type="error" v-if="showAlert" style="margin-bottom: 10px"
-                message='{{ i18n "secAlertTitle" }}'
-                color="red"
-                description='{{ i18n "secAlertSsl" }}'
-                show-icon closable
-                >
-                </a-alert>
-            </transition>
-            <transition name="list" appear>
-                <a-row>
-                    <a-card hoverable>
-                        <a-row>
-                            <a-col :sm="24" :md="12">
-                                <a-row>
-                                    <a-col :span="12" style="text-align: center">
-                                        <a-progress type="dashboard" status="normal"
-                                                    :stroke-color="status.cpu.color"
-                                                    :percent="status.cpu.percent"></a-progress>
-                                            <div><strong>CPU:</strong>  [[ cpuCoreFormat(status.cpuCount) ]]</div>
-                                    </a-col>
-                                    <a-col :span="12" style="text-align: center">
-                                        <a-progress type="dashboard" status="normal"
-                                                    :stroke-color="status.mem.color"
-                                                    :percent="status.mem.percent"></a-progress>
-                                        <div>
-                                            <strong>{{ i18n "pages.index.memory"}}:</strong> [[ sizeFormat(status.mem.current) ]] / [[ sizeFormat(status.mem.total) ]]
-                                        </div>
-                                    </a-col>
-                                </a-row>
-                            </a-col>
-                            <a-col :sm="24" :md="12">
-                                <a-row>
-                                    <a-col :span="12" style="text-align: center">
-                                        <a-progress type="dashboard" status="normal"
-                                                    :stroke-color="status.swap.color"
-                                                    :percent="status.swap.percent"></a-progress>
-                                        <div>
-                                            <strong>Swap:</strong> [[ sizeFormat(status.swap.current) ]] / [[ sizeFormat(status.swap.total) ]]
-                                        </div>
-                                    </a-col>
-                                    <a-col :span="12" style="text-align: center">
-                                        <a-progress type="dashboard" status="normal"
-                                                    :stroke-color="status.disk.color"
-                                                    :percent="status.disk.percent"></a-progress>
-                                        <div>
-                                            <strong>{{ i18n "pages.index.hard"}}:</strong> [[ sizeFormat(status.disk.current) ]] / [[ sizeFormat(status.disk.total) ]]
-                                        </div>
-                                    </a-col>
-                                </a-row>
-                            </a-col>
-                        </a-row>
-                    </a-card>
-                </a-row>
-            </transition>
-            <transition name="list" appear>
-                <a-row>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.inbounds.stream.tcp.version" }}:</strong>
-                            <a href="https://github.com/ozgunokan/x-ui-TR/releases" target="_blank">
-                                <a-tag color="purple" style="cursor: pointer;">X-UI {{ .cur_ver }}</a-tag>
-                            </a>
-                            <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
-                                <a-tag color="purple" style="cursor: pointer;" @click="openSelectV2rayVersion">Xray [[ status.xray.version ]]</a-tag>
-                            </a-tooltip>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.index.operationHours" }}:</strong> 
-                            <a-tooltip>
-                                 <template slot="title">
-                                     {{ i18n "pages.index.xrayoperationHoursDesc" }}
-                                 </template>
-                                <a-tag color="blue" style="margin-right: 3px;">Xray [[ formatSecond(status.appStats.uptime) ]]</a-tag>
-                            </a-tooltip>      
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.operationHoursDesc" }}
-                                </template>
-                                 <a-tag color="blue">OS [[ formatSecond(status.uptime) ]]</a-tag>
-                            </a-tooltip>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.index.xrayStatus" }}:</strong>
-                            <a-tag :color="status.xray.color" style="margin-right: 3px;"><strong>[[ status.xray.state ]]</strong></a-tag>
-                            <a-popover v-if="status.xray.state === 'Hata' || status.xray.state === 'Error'"
-                                :overlay-class-name="themeSwitcher.currentTheme">
-                                <span slot="title" style="font-size: 12pt">An error occurred while running Xray
-                                    <a-tag color="purple" style="cursor: pointer; float: right;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
-                                </span>
-                                <template slot="content">
-                                    <p style="max-width: 400px" v-for="line in status.xray.errorMsg.split('\n')">[[ line ]]</p>
-                                </template>
-                                <a-icon type="exclamation-circle"></a-icon>
-                            </a-popover>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="stopXrayService">{{ i18n "pages.index.stopXray" }}</a-tag>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="restartXrayService">{{ i18n "pages.index.restartXray" }}</a-tag>             
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "menu.link" }}:</strong>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openLogs()">{{ i18n "pages.index.logs" }}</a-tag>
-                            <a-tag color="purple" style="cursor: pointer; margin-right: 3px;" @click="openConfig">{{ i18n "pages.index.config" }}</a-tag>
-                            <a-tag color="purple" style="cursor: pointer;" @click="openBackup">{{ i18n "pages.index.backup" }}</a-tag>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.index.systemLoad" }}:</strong> 
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.systemLoadDesc" }}
-                                </template>
-                                <a-tag color="blue">[[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]</a-tag>
-                            </a-tooltip>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "usage" }}:</strong>
-                            <a-tag color="blue" style="margin-right: 3px;">RAM [[ sizeFormat(status.appStats.mem) ]]</a-tag>
-                            <a-tag color="blue">Threads [[ status.appStats.threads ]]</a-tag>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <strong>{{ i18n "pages.index.serverInfo" }}:</strong>
-                            <a-tooltip>
-                                <template slot="title">
-                                    {{ i18n "pages.index.hostname" }}
-                                </template>
-                                <a-tag color="blue" style="margin-right: 3px;">[[ status.hostInfo.hostname ]]</a-tag>
-                            </a-tooltip>
-                            <template v-if="status.hostInfo.ipv4">    
-                                <a-tooltip>
-                                    <template slot="title">
-                                        [[ status.hostInfo.ipv4 ]]
-                                    </template>
-                                    <a-tag color="blue" style="margin-right: 3px;">IPv4</a-tag>
-                                </a-tooltip>
-                            </template>
-                            <template v-if="status.hostInfo.ipv6">
-                                <a-tooltip>
-                                    <template slot="title">
-                                        [[ status.hostInfo.ipv6 ]]
-                                    </template>
-                                    <a-tag color="blue" style="margin-right: 3px;">IPv6</a-tag>
-                                </a-tooltip>
-                            </template>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <a-row>
-                                <a-col :span="12">
-                                    <a-icon type="swap"></a-icon>    
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.connectionTcpCountDesc" }}
-                                        </template>
-                                        <strong>TCP:</strong> <a-tag>[[ status.tcpCount ]]</a-tag>
-                                    </a-tooltip>
-                                </a-col>
-                                <a-col :span="12">
-                                    <a-icon type="swap"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.connectionUdpCountDesc" }}
-                                        </template>
-                                        <strong>UDP:</strong> <a-tag>[[ status.udpCount ]]</a-tag>
-                                    </a-tooltip>
-                                </a-col>
-                            </a-row>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <a-row>
-                                <a-col :span="12">
-                                    <a-icon type="arrow-up"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.upSpeed" }}
-                                        </template>
-                                        <strong>Up:</strong> [[ sizeFormat(status.netIO.up) ]]/s
-                                    </a-tooltip>
-                                </a-col>
-                                <a-col :span="12">
-                                    <a-icon type="arrow-down"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.downSpeed" }}
-                                        </template>
-                                        <strong>Down:</strong> [[ sizeFormat(status.netIO.down) ]]/s
-                                    </a-tooltip>
-                                </a-col>
-                            </a-row>
-                        </a-card>
-                    </a-col>
-                    <a-col :sm="24" :md="12">
-                        <a-card hoverable>
-                            <a-row>
-                                <a-col :span="12">
-                                    <a-icon type="cloud-upload"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.totalSent" }}
-                                        </template>
-                                        <strong>Out:</strong> [[ sizeFormat(status.netTraffic.sent) ]]
-                                    </a-tooltip>
-                                </a-col>
-                                <a-col :span="12">
-                                    <a-icon type="cloud-download"></a-icon>
-                                    <a-tooltip>
-                                        <template slot="title">
-                                            {{ i18n "pages.index.totalReceive" }}
-                                        </template>
-                                       <strong>In:</strong> [[ sizeFormat(status.netTraffic.recv) ]]
-                                    </a-tooltip>
-                                </a-col>
-                            </a-row>
-                        </a-card>
-                    </a-col>
-                </a-row>
-            </transition>
-        </a-layout-content>
-    </a-layout>
+#Add some basic function here
+function LOGD() {
+    echo -e "${yellow}[DEG] $* ${plain}"
+}
 
-    <a-modal id="version-modal" v-model="versionModal.visible" title='{{ i18n "pages.index.xraySwitch" }}'
-             :closable="true" @ok="() => versionModal.visible = false"
-             :class="themeSwitcher.currentTheme"
-             footer="">
-        <a-alert type="warning" style="margin-bottom: 12px; width: fit-content"
-        message='{{ i18n "pages.index.xraySwitchClickDesk" }}'
-        show-icon
-        ></a-alert>
-        <template v-for="version, index in versionModal.versions">
-            <a-tag :color="index % 2 == 0 ? 'purple' : 'blue'"
-                   style="margin: 10px" @click="switchV2rayVersion(version)">
-                [[ version ]]
-            </a-tag>
-        </template>
-    </a-modal>
+function LOGE() {
+    echo -e "${red}[ERR] $* ${plain}"
+}
 
-    <a-modal id="log-modal" v-model="logModal.visible"
-             :closable="true" @cancel="() => logModal.visible = false"
-             :class="themeSwitcher.currentTheme"
-             width="800px" footer="">
-        <template slot="title">
-            {{ i18n "pages.index.logs" }}
-            <a-icon :spin="logModal.loading"
-                    type="sync"
-                    style="vertical-align: middle; margin-left: 10px;"
-                    :disabled="logModal.loading"
-                    @click="openLogs()">
-            </a-icon>
-        </template>
-        <a-form layout="inline">
-            <a-form-item>
-                <a-input-group compact>
-                    <a-select v-model="logModal.rows" style="width:70px;"
-                    @change="openLogs()" :dropdown-class-name="themeSwitcher.currentTheme">
-                        <a-select-option value="10">10</a-select-option>
-                        <a-select-option value="20">20</a-select-option>
-                        <a-select-option value="50">50</a-select-option>
-                        <a-select-option value="100">100</a-select-option>
-                        <a-select-option value="500">500</a-select-option>
-                    </a-select>
-                    <a-select v-model="logModal.level" style="width:100px;"
-                    @change="openLogs()" :dropdown-class-name="themeSwitcher.currentTheme">
-                        <a-select-option value="debug">Debug</a-select-option>
-                        <a-select-option value="info">Info</a-select-option>
-                        <a-select-option value="warning">Warning</a-select-option>
-                        <a-select-option value="err">Error</a-select-option>
-                    </a-select>
-                </a-input-group>
-            </a-form-item>
-            <a-form-item>
-                <a-checkbox v-model="logModal.syslog" @change="openLogs()">SysLog</a-checkbox>
-            </a-form-item>
-            <a-form-item style="float: right;">
-                <a-button type="primary" icon="download"
-                :href="'data:application/text;charset=utf-8,' + encodeURIComponent(logModal.logs?.join('\n'))" download="x-ui.log">
-                </a-button>
-            </a-form-item>
-        </a-form>
-        <div class="ant-input" style="height: auto; max-height: 500px; overflow: auto;" v-html="logModal.formattedLogs"></div>
-    </a-modal>
+function LOGI() {
+    echo -e "${green}[INF] $* ${plain}"
+}
+# check root
+[[ $EUID -ne 0 ]] && LOGE "ERROR: You must be root to run this script! \n" && exit 1
 
-    <a-modal id="backup-modal" v-model="backupModal.visible" :title="backupModal.title"
-            :closable="true" footer=""
-            :class="themeSwitcher.currentTheme">
-            <a-alert type="warning" style="margin-bottom: 10px; width: fit-content"
-            :message="backupModal.description"
-            show-icon
-            ></a-alert>
-        <a-space direction="horizontal" style="text-align: center" style="margin-bottom: 10px;">
-            <a-button type="primary" @click="exportDatabase()">
-                [[ backupModal.exportText ]]
-            </a-button>
-            <a-button type="primary" @click="importDatabase()">
-                [[ backupModal.importText ]]
-            </a-button>
-        </a-space>
-    </a-modal>
+# Check OS and set release variable
+if [[ -f /etc/os-release ]]; then
+    source /etc/os-release
+    release=$ID
+elif [[ -f /usr/lib/os-release ]]; then
+    source /usr/lib/os-release
+    release=$ID
+else
+    echo "Failed to check the system OS, please contact the author!" >&2
+    exit 1
+fi
 
-</a-layout>
-{{template "js" .}}
-<script src="{{ .base_path }}assets/clipboard/clipboard.min.js"></script>
-{{template "component/themeSwitcher" .}}
-{{template "textModal"}}
-<script>
-    // Backend'den (Go) gelecek olan ham ingilizce durum kelimeleri
-    const State = {
-        Running: "Running",
-        Stop: "Stop",
-        Error: "Error",
-    }
-    Object.freeze(State);
+echo "The OS release is: $release"
 
-    class CurTotal {
+confirm() {
+    if [[ $# > 1 ]]; then
+        echo && read -p "$1 [Default $2]: " temp
+        if [[ x"${temp}" == x"" ]]; then
+            temp=$2
+        fi
+    else
+        read -p "$1 [y/n]: " temp
+    fi
+    if [[ x"${temp}" == x"y" || x"${temp}" == x"Y" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
 
-        constructor(current, total) {
-            this.current = current;
-            this.total = total;
-        }
+confirm_restart() {
+    confirm "Restart the panel, Attention: Restarting the panel will also restart xray" "y"
+    if [[ $? == 0 ]]; then
+        restart
+    else
+        show_menu
+    fi
+}
 
-        get percent() {
-            if (this.total === 0) {
-                return 0;
-            }
-            return toFixed(this.current / this.total * 100, 2);
-        }
+before_show_menu() {
+    echo && echo -n -e "${yellow}Press enter to return to the main menu: ${plain}" && read temp
+    show_menu
+}
 
-        get color() {
-            const percent = this.percent;
-            if (percent < 80) {
-                return '#0e49b5';
-            } else if (percent < 90) {
-                return '#ffa031';
-            } else {
-                return '#e04141';
-            }
-        }
-    }
+install() {
+    bash <(curl -Ls https://raw.githubusercontent.com/ozgunokan/x-ui-TR/main/install.sh)
+    if [[ $? == 0 ]]; then
+        if [[ $# == 0 ]]; then
+            start
+        else
+            start 0
+        fi
+    fi
+}
 
-    class Status {
-        constructor(data) {
-            this.cpu = new CurTotal(0, 0);
-            this.cpuCount = 0;
-            this.disk = new CurTotal(0, 0);
-            this.loads = [0, 0, 0];
-            this.mem = new CurTotal(0, 0);
-            this.netIO = {up: 0, down: 0};
-            this.netTraffic = {sent: 0, recv: 0};
-            this.swap = new CurTotal(0, 0);
-            this.tcpCount = 0;
-            this.udpCount = 0;
-            this.uptime = 0;
-            this.appUptime = 0;
-            this.appStats = {threads: 0, mem: 0, uptime: 0};
-            this.hostInfo = {hostname:"", ipv4: "", ipv6: ""};
-            this.xray = {state: "Durdu", errorMsg: "", version: "", color: "orange"};
+update() {
+    confirm "This function will forcefully reinstall the latest version, and the data will not be lost. Do you want to continue?" "n"
+    if [[ $? != 0 ]]; then
+        LOGE "Cancelled"
+        if [[ $# == 0 ]]; then
+            before_show_menu
+        fi
+        return 0
+    fi
+    bash <(curl -Ls https://raw.githubusercontent.com/ozgunokan/x-ui-TR/main/install.sh)
+    if [[ $? == 0 ]]; then
+        LOGI "Update is complete, Panel has automatically restarted "
+        exit 0
+    fi
+}
 
-            if (data == null) {
-                return;
-            }
-            this.cpu = new CurTotal(data.cpu, 100);
-            this.cpuCount = data.cpuCount;
-            this.disk = new CurTotal(data.disk.current, data.disk.total);
-            this.loads = data.loads.map(load => toFixed(load, 2));
-            this.mem = new CurTotal(data.mem.current, data.mem.total);
-            this.netIO = data.netIO;
-            this.netTraffic = data.netTraffic;
-            this.swap = new CurTotal(data.swap.current, data.swap.total);
-            this.tcpCount = data.tcpCount;
-            this.udpCount = data.udpCount;
-            this.uptime = data.uptime;
-            this.appUptime = data.appUptime;
-            this.appStats = data.appStats;
-            this.hostInfo = data.hostInfo;
-            
-            this.xray = data.xray;
-            // Eşleşme problemini çözmek için backend durumunu filtreliyoruz
-            switch (this.xray.state) {
-                case State.Running:
-                case "Running":
-                case "running":
-                    this.xray.color = 'blue';
-                    this.xray.state = "Çalışıyor";
-                    break;
-                case State.Stop:
-                case "Stop":
-                case "stop":
-                    this.xray.color = "orange";
-                    this.xray.state = "Durdu";
-                    break;
-                case State.Error:
-                case "Error":
-                case "error":
-                case "err":
-                    this.xray.color = "red";
-                    this.xray.state = "Hata";
-                    break;
-                default:
-                    this.xray.color = "gray";
-            }
-        }
-    }
+legacy_version() {
+    echo "Enter the panel version (like 1.6.0):"
+    read panel_version
 
-    const versionModal = {
-        visible: false,
-        versions: [],
-        show(versions) {
-            this.visible = true;
-            this.versions = versions;
-        },
-        hide() {
-            this.visible = false;
-        },
-    };
+    if [ -z "$panel_version" ]; then
+        echo "Panel version cannot be empty. Exiting."
+        exit 1
+    fi
 
-    const logModal = {
-        visible: false,
-        logs: [],
-        rows: 20,
-        level: 'info',
-        syslog: false,
-        loading: false,
-        show(logs) {
-            this.visible = true;
-            this.logs = logs; 
-            this.formattedLogs = this.logs?.length > 0 ? this.formatLogs(this.logs) : "No Record...";
-        },
-        formatLogs(logs) {
-            let formattedLogs = '';
-            const levels = ["DEBUG","INFO","WARNING","ERROR"];
-            const levelColors = ["#3c89e8","#008771","#f37b24","#e04141","#bcbcbc"];
+    download_link="https://raw.githubusercontent.com/ozgunokan/x-ui-TR/master/install.sh"
 
-            logs.forEach((log, index) => {
-                let [data, message] = log.split(" - ",2);
-                const parts = data.split(" ")
-                if(index>0) formattedLogs += '<br>';
+    # Use the entered panel version in the download link
+    install_command="bash <(curl -Ls $download_link) $panel_version"
 
-                if (parts.length === 3) {
-                    const d = parts[0];
-                    const t = parts[1];
-                    const level = parts[2];
-                    const levelIndex = levels.indexOf(level,levels) || 4;
+    echo "Downloading and installing panel version $panel_version..."
+    eval $install_command
+}
 
-                    formattedLogs += `<span style="color: ${levelColors[0]};">${d} ${t}</span> `;
-                    formattedLogs += `<span style="color: ${levelColors[levelIndex]}">${level}</span>`;
-                } else {
-                    const levelIndex = levels.indexOf(data,levels) || 4;
-                    formattedLogs += `<span style="color: ${levelColors[levelIndex]}">${data}</span>`;
-                }
+# Function to handle the deletion of the script file
+delete_script() {
+    rm "$0" # Remove the script file itself
+    exit 1
+}
 
-                if(message){
-                    if(message.startsWith("XRAY:"))
-                        message = "<b>XRAY: </b>" + message.substring(5);
-                    else
-                        message = "<b>X-UI: </b>" + message;
-                }
+uninstall() {
+    confirm "Are you sure you want to uninstall the panel? xray will also uninstalled!" " n"
+    if [[ $? != 0 ]]; then
+        if [[ $# == 0 ]]; then
+            show_menu
+        fi
+        return 0
+    fi
+    systemctl stop x-ui
+    systemctl disable x-ui
+    rm /etc/systemd/system/x-ui.service -f
+    systemctl daemon-reload
+    systemctl reset-failed
+    rm /etc/x-ui/ -rf
+    rm /usr/local/x-ui/ -rf
+    echo -e "\nUninstalled Successfully."
+    echo ""
+    echo -e "If you need to install this panel again, you can use below command:"
+    echo -e "${green}bash <(curl -Ls https://raw.githubusercontent.com/ozgunokan/x-ui-TR/master/install.sh)${plain}"
+    echo ""
+    # Trap the SIGTERM signal
+    trap delete_script SIGTERM
+    delete_script
+}
 
-                formattedLogs += message ? ' - ' + message : '';
-            });
+reset_user() {
+    confirm "Are you sure to reset the username and password of the panel?" "n"
+    if [[ $? != 0 ]]; then
+        if [[ $# == 0 ]]; then
+            show_menu
+        fi
+        return 0
+    fi
 
-            return formattedLogs;
-        },
-        hide() {
-            this.visible = false;
-        },
-    };
+    read -rp "Please set the login username [default is a random username]: " config_account
+    [[ -z $config_account ]] && config_account=$(gen_random_string 10)
+    read -rp "Please set the login password [default is a random password]: " config_password
+    [[ -z $config_password ]] && config_password=$(gen_random_string 18)
+    
+    echo -e "Panel login username has been reset to: ${green} ${config_account} ${plain}"
+    echo -e "Panel login password has been reset to: ${green} ${config_password} ${plain}"
+    echo -e "${green} Please use the new login username and password to access the X-UI panel. Also remember them! ${plain}"
 
-    const backupModal = {
-        visible: false,
-        title: '',
-        description: '',
-        exportText: '',
-        importText: '',
-        show({
-            title = '{{ i18n "pages.index.backupTitle" }}',
-            description = '{{ i18n "pages.index.backupDescription" }}',
-            exportText = '{{ i18n "pages.index.exportDatabase" }}',
-            importText = '{{ i18n "pages.index.importDatabase" }}',
-        }) {
-            this.title = title;
-            this.description = description;
-            this.exportText = exportText;
-            this.importText = importText;
-            this.visible = true;
-        },
-        hide() {
-            this.visible = false;
-        },
-    };
+    confirm_restart
+}
 
-    const app = new Vue({
-        delimiters: ['[[', ']]'],
-        el: '#app',
-        data: {
-            siderDrawer,
-            themeSwitcher,
-            status: new Status(),
-            versionModal,
-            logModal,
-            backupModal,
-            spinning: false,
-            loadingTip: '{{ i18n "loading"}}',
-            showAlert: false,
-        },
-        methods: {
-            loading(spinning, tip = '{{ i18n "loading"}}') {
-                this.spinning = spinning;
-                this.loadingTip = tip;
-            },
-            async getStatus() {
-                const msg = await HttpUtil.get('/server/status');
-                if (msg.success) {
-                    this.setStatus(msg.obj);
-                }
-            },
-            setStatus(data) {
-                this.status = new Status(data);
-            },
-            async openSelectV2rayVersion() {
-                this.loading(true);
-                const msg = await HttpUtil.get('server/getXrayVersion');
-                this.loading(false);
-                if (!msg.success) {
-                    return;
-                }
-                versionModal.show(msg.obj);
-            },
-            switchV2rayVersion(version) {
-                this.$confirm({
-                    title: '{{ i18n "pages.index.xraySwitchVersionDialog"}}',
-                    content: '{{ i18n "pages.index.xraySwitchVersionDialogDesc"}}' + ` ${version}?`,
-                    class: themeSwitcher.currentTheme,
-                    okText: '{{ i18n "confirm"}}',
-                    cancelText: '{{ i18n "cancel"}}',
-                    onOk: async () => {
-                        versionModal.hide();
-                        this.loading(true, '{{ i18n "pages.index.dontRefresh"}}');
-                        await HttpUtil.post(`/server/installXray/${version}`);
-                        this.loading(false);
-                    },
-                });
-            },
-            async stopXrayService() {
-                this.loading(true);
-                const msg = await HttpUtil.post('server/stopXrayService');
-                this.loading(false);
-                if (!msg.success) {
-                    return;
-                }
-            },
-            async restartXrayService() {
-                this.loading(true);
-                const msg = await HttpUtil.post('server/restartXrayService');
-                this.loading(false);
-                if (!msg.success) {
-                    return;
-                }
-            },
-            async openLogs(){
-                logModal.loading = true;
-                const msg = await HttpUtil.post('server/logs/'+logModal.rows,{level: logModal.level, syslog: logModal.syslog});
-                if (!msg.success) {
-                    return;
-                }
-                logModal.show(msg.obj);
-                await PromiseUtil.sleep(500);
-                logModal.loading = false;
-            },
-            async openConfig() {
-                this.loading(true);
-                const msg = await HttpUtil.get('server/getConfigJson');
-                this.loading(false);
-                if (!msg.success) {
-                    return;
-                }
-                txtModal.show('config.json', JSON.stringify(msg.obj, null, 2), 'config.json');
-            },
-            openBackup() {
-                backupModal.show({
-                    title: '{{ i18n "pages.index.backupTitle" }}',
-                    description: '{{ i18n "pages.index.backupDescription" }}',
-                    exportText: '{{ i18n "pages.index.exportDatabase" }}',
-                    importText: '{{ i18n "pages.index.importDatabase" }}',
-                });
-            },
-            exportDatabase() {
-                window.location = basePath + 'server/getDb';
-            },
-            importDatabase() {
-                const fileInput = document.createElement('input');
-                fileInput.type = 'file';
-                fileInput.accept = '.db';
-                fileInput.addEventListener('change', async (event) => {
-                    const dbFile = event.target.files[0];
-                    if (dbFile) {
-                        const formData = new FormData();
-                        formData.append('db', dbFile);
-                        backupModal.hide();
-                        this.loading(true);
-                        const uploadMsg = await HttpUtil.post('server/importDB', formData, {
-                            headers: {
-                                'Content-Type': 'multipart/form-data',
-                            }
-                        });
-                        this.loading(false);
-                        if (!uploadMsg.success) {
-                            return;
-                        }
-                        this.loading(true);
-                        const restartMsg = await HttpUtil.post("/xui/setting/restartPanel");
-                        this.loading(false);
-                        if (restartMsg.success) {
-                            this.loading(true);
-                            await PromiseUtil.sleep(5000);
-                            location.reload();
-                        }
-                    }
-                });
-                fileInput.click();
-            },
-        },
-        async mounted() {
-            if (window.location.protocol !== "https:") {
-                this.showAlert = true;
-            }
-            while (true) {
-                try {
-                    await this.getStatus();
-                } catch (e) {
-                    console.error(e);
-                }
-                await PromiseUtil.sleep(2000);
-            }
-        },
-    });
-</script>
-</body>
-</html>
+gen_random_string() {
+    local length="$1"
+    local random_string=$(LC_ALL=C tr -dc 'a-zA-Z0-9' </dev/urandom | fold -w "$length" | head -n 1)
+    echo "$random_string"
+}
+
+reset_webbasepath() {
+    echo -e "${yellow}Resetting Web Base Path${plain}"
+
+    read -rp "Are you sure you want to reset the web base path? (y/n): " confirm
+    if [[ $confirm != "y" && $confirm != "Y" ]]; then
+        echo -e "${yellow}Operation canceled.${plain}"
+        return
+    fi
+
+    config_webBasePath=$(gen_random_string 10)
+
+    # Apply the new web base path setting
+    /usr/local/x-ui/x-ui setting -webBasePath "${config_webBasePath}" >/dev/null 2>&1
+
+    echo -e "Web base path has been reset to: ${green}${config_webBasePath}${plain}"
+    echo -e "${green}Please use the new web base path to access the panel.${plain}"
+    restart
+}
+
+reset_config() {
+    confirm "Are you sure you want to reset all panel settings? Account data will not be lost, Username and password will not change" "n"
+    if [[ $? != 0 ]]; then
+        if [[ $# == 0 ]]; then
+            show_menu
+        fi
+        return 0
+    fi
+    /usr/local/x-ui/x-ui setting -reset
+    echo -e "All panel settings have been reset to default. Please restart the panel now, and use the default ${green}54321${plain} Port to Access the web Panel"
+    confirm_restart
+}
+
+check_config() {
+    info=$(/usr/local/x-ui/x-ui setting -show true)
+    if [[ $? != 0 ]]; then
+        LOGE "Get current settings error, please check logs"
+        show_menu
+    fi
+    LOGI "${info}"
+}
+
+get_uri() {
+    info=$(/usr/local/x-ui/x-ui uri)
+    if [[ $? != 0 ]]; then
+        LOGE "Get current uri error"
+        show_menu
+    fi
+    LOGI "You may access the Panel with following URL(s):"
+    echo -e "${yellow}${info}${plain}"
+}
+
+set_port() {
+    echo && echo -n -e "Enter port number[1-65535]: " && read port
+    if [[ -z "${port}" ]]; then
+        LOGD "Cancelled"
+        before_show_menu
+    else
+        /usr/local/x-ui/x-ui setting -port ${port}
+        echo -e "The port is set, Please restart the panel now, and use the new port ${green}${port}${plain} to access web panel"
+        confirm_restart
+    fi
+}
+
+start() {
+    check_status
+    if [[ $? == 0 ]]; then
+        echo ""
+        LOGI "Panel is running, No need to start again, If you need to restart, please select restart"
+    else
+        systemctl start x-ui
+        sleep 2
+        check_status
+        if [[ $? == 0 ]]; then
+            LOGI "x-ui Started Successfully"
+        else
+            LOGE "panel Failed to start, Probably because it takes longer than two seconds to start, Please check the log information later"
+        fi
+    fi
+
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+stop() {
+    check_status
+    if [[ $? == 1 ]]; then
+        echo ""
+        LOGI "Panel stopped, No need to stop again!"
+    else
+        systemctl stop x-ui
+        sleep 2
+        check_status
+        if [[ $? == 1 ]]; then
+            LOGI "x-ui and xray stopped successfully"
+        else
+            LOGE "Panel stop failed, Probably because the stop time exceeds two seconds, Please check the log information later"
+        fi
+    fi
+
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+restart() {
+    systemctl restart x-ui
+    sleep 2
+    check_status
+    if [[ $? == 0 ]]; then
+        LOGI "x-ui and xray Restarted successfully"
+    else
+        LOGE "Panel restart failed, Probably because it takes longer than two seconds to start, Please check the log information later"
+    fi
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+restart_xray() {
+    systemctl reload x-ui
+    LOGI "xray-core Restart signal sent successfully, Please check the log information to confirm whether xray restarted successfully"
+    sleep 2
+    show_xray_status
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+status() {
+    systemctl status x-ui -l
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+enable() {
+    systemctl enable x-ui
+    if [[ $? == 0 ]]; then
+        LOGI "x-ui Set to boot automatically on startup successfully"
+    else
+        LOGE "x-ui Failed to set Autostart"
+    fi
+
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+disable() {
+    systemctl disable x-ui
+    if [[ $? == 0 ]]; then
+        LOGI "x-ui Autostart Cancelled successfully"
+    else
+        LOGE "x-ui Failed to cancel autostart"
+    fi
+
+    if [[ $# == 0 ]]; then
+        before_show_menu
+    fi
+}
+
+show_log() {
+    echo -e "${green}\t1.${plain} Debug Log"
+    echo -e "${green}\t2.${plain} Clear All logs"
+    echo -e "${green}\t0.${plain} Back to Main Menu"
+    read -p "Choose an option: " choice
+
+    case "$choice" in
+    0)
+        return
+        ;;
+    1)
+        journalctl -u x-ui -e --no-pager -f -p debug
+        if [[ $# == 0 ]]; then
+        before_show_menu
+        fi
+        ;;
+    2)
+        sudo journalctl --rotate
+        sudo journalctl --vacuum-time=1s
+        echo "All Logs cleared."
+        restart
+        ;;
+    *)
+        echo "Invalid choice"
+        ;;
+    esac
+}
+
+update_shell() {
+    wget -O /usr/bin/x-ui -N --no-check-certificate https://github.com/ozgunokan/x-ui-TR/raw/main/x-ui.sh
+    if [[ $? != 0 ]]; then
+        echo ""
+        LOGE "Failed to download script, Please check whether the machine can connect Github"
+        before_show_menu
+    else
+        chmod +x /usr/bin/x-ui
+        LOGI "Upgrade script succeeded, Please rerun the script" && exit 0
+    fi
+}
+
+# 0: running, 1: not running, 2: not installed
+check_status() {
+    if [[ ! -f /etc/systemd/system/x-ui.service ]]; then
+        return 2
+    fi
+    temp=$(systemctl status x-ui | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+    if [[ x"${temp}" == x"running" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+check_enabled() {
+    temp=$(systemctl is-enabled x-ui)
+    if [[ x"${temp}" == x"enabled" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+check_uninstall() {
+    check_status
+    if [[ $? != 2 ]]; then
+        echo ""
+        LOGE "Panel installed, Please do not reinstall"
+        if [[ $# == 0 ]]; then
+            before_show_menu
+        fi
+        return 1
+    else
+        return 0
+    fi
+}
+
+check_install() {
+    check_status
+    if [[ $? == 2 ]]; then
+        echo ""
+        LOGE "Please install the panel first"
+        if [[ $# == 0 ]]; then
+            before_show_menu
+        fi
+        return 1
+    else
+        return 0
+    fi
+}
+
+show_status() {
+    check_status
+    case $? in
+    0)
+        echo -e "Panel state: ${green}Running${plain}"
+        show_enable_status
+        ;;
+    1)
+        echo -e "Panel state: ${yellow}Not Running${plain}"
+        show_enable_status
+        ;;
+    2)
+        echo -e "Panel state: ${red}Not Installed${plain}"
+        ;;
+    esac
+    show_xray_status
+}
+
+show_enable_status() {
+    check_enabled
+    if [[ $? == 0 ]]; then
+        echo -e "Start automatically: ${green}Yes${plain}"
+    else
+        echo -e "Start automatically: ${red}No${plain}"
+    fi
+}
+
+check_xray_status() {
+    count=$(ps -ef | grep "xray-linux" | grep -v "grep" | wc -l)
+    if [[ count -ne 0 ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+show_xray_status() {
+    check_xray_status
+    if [[ $? == 0 ]]; then
+        echo -e "xray state: ${green}Running${plain}"
+    else
+        echo -e "xray state: ${red}Not Running${plain}"
+    fi
+}
+
+install_acme() {
+    # Check if acme.sh is already installed
+    if command -v ~/.acme.sh/acme.sh &>/dev/null; then
+        LOGI "acme.sh is already installed."
+        return 0
+    fi
+
+    LOGI "Installing acme.sh..."
+    cd ~ || return 1 # Ensure you can change to the home directory
+
+    curl -s https://get.acme.sh | sh
+    if [ $? -ne 0 ]; then
+        LOGE "Installation of acme.sh failed."
+        return 1
+    else
+        LOGI "Installation of acme.sh succeeded."
+    fi
+
+    return 0
+}
+
+ssl_cert_issue_main() {
+    echo -e "${green}\t1.${plain} Get SSL"
+    echo -e "${green}\t2.${plain} Revoke"
+    echo -e "${green}\t3.${plain} Force Renew"
+    echo -e "${green}\t4.${plain} Show Existing Domains"
+    echo -e "${green}\t5.${plain} Set Cert paths for the panel"
+    echo -e "${green}\t0.${plain} Back to Main Menu"
+
+    read -p "Choose an option: " choice
+    case "$choice" in
+    0)
+        show_menu
+        ;;
+    1)
+        ssl_cert_issue
+        ;;
+    2)
+        local domains=$(find /root/cert/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+        if [ -z "$domains" ]; then
+            echo "No certificates found to revoke."
+        else
+            echo "Existing domains:"
+            echo "$domains"
+            read -p "Please enter a domain from the list to revoke the certificate: " domain
+            if echo "$domains" | grep -qw "$domain"; then
+                ~/.acme.sh/acme.sh --revoke -d ${domain}
+                LOGI "Certificate revoked for domain: $domain"
+            else
+                echo "Invalid domain entered."
+            fi
+        fi
+        ;;
+    3)
+        local domains=$(find /root/cert/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+        if [ -z "$domains" ]; then
+            echo "No certificates found to renew."
+        else
+            echo "Existing domains:"
+            echo "$domains"
+            read -p "Please enter a domain from the list to renew the SSL certificate: " domain
+            if echo "$domains" | grep -qw "$domain"; then
+                ~/.acme.sh/acme.sh --renew -d ${domain} --force
+                LOGI "Certificate forcefully renewed for domain: $domain"
+            else
+                echo "Invalid domain entered."
+            fi
+        fi
+        ;;
+    4)
+        local domains=$(find /root/cert/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+        if [ -z "$domains" ]; then
+            echo "No certificates found."
+        else
+            echo "Existing domains and their paths:"
+            for domain in $domains; do
+                local cert_path="/root/cert/${domain}/fullchain.pem"
+                local key_path="/root/cert/${domain}/privkey.pem"
+                if [[ -f "${cert_path}" && -f "${key_path}" ]]; then
+                    echo -e "Domain: ${domain}"
+                    echo -e "\tCertificate Path: ${cert_path}"
+                    echo -e "\tPrivate Key Path: ${key_path}"
+                else
+                    echo -e "Domain: ${domain} - Certificate or Key missing."
+                fi
+            done
+        fi
+        ;;
+    5)
+        local domains=$(find /root/cert/ -mindepth 1 -maxdepth 1 -type d -exec basename {} \;)
+        if [ -z "$domains" ]; then
+            echo "No certificates found."
+        else
+            echo "Available domains:"
+            echo "$domains"
+            read -p "Please choose a domain to set the panel paths: " domain
+
+            if echo "$domains" | grep -qw "$domain"; then
+                local webCertFile="/root/cert/${domain}/fullchain.pem"
+                local webKeyFile="/root/cert/${domain}/privkey.pem"
+
+                if [[ -f "${webCertFile}" && -f "${webKeyFile}" ]]; then
+                    /usr/local/x-ui/x-ui cert -webCert "$webCertFile" -webCertKey "$webKeyFile"
+                    echo "Panel paths set for domain: $domain"
+                    echo "  - Certificate File: $webCertFile"
+                    echo "  - Private Key File: $webKeyFile"
+                    restart
+                else
+                    echo "Certificate or private key not found for domain: $domain."
+                fi
+            else
+                echo "Invalid domain entered."
+            fi
+        fi
+        ;;
+
+    *)
+        echo "Invalid choice"
+        ;;
+    esac
+}
+
+ssl_cert_issue() {
+    # check for acme.sh first
+    if ! command -v ~/.acme.sh/acme.sh &>/dev/null; then
+        echo "acme.sh could not be found. we will install it"
+        install_acme
+        if [ $? -ne 0 ]; then
+            LOGE "install acme failed, please check logs"
+            exit 1
+        fi
+    fi
+
+    # install socat second
+    case "${release}" in
+    ubuntu | debian | armbian)
+        apt update && apt install socat -y
+        ;;
+    centos | almalinux | rocky | ol)
+        yum -y update && yum -y install socat
+        ;;
+    fedora | amzn)
+        dnf -y update && dnf -y install socat
+        ;;
+    arch | manjaro | parch)
+        pacman -Sy --noconfirm socat
+        ;;
+    *)
+        echo -e "${red}Unsupported operating system. Please check the script and install the necessary packages manually.${plain}\n"
+        exit 1
+        ;;
+    esac
+    if [ $? -ne 0 ]; then
+        LOGE "install socat failed, please check logs"
+        exit 1
+    else
+        LOGI "install socat succeed..."
+    fi
+
+    # get the domain here, and we need to verify it
+    local domain=""
+    read -p "Please enter your domain name: " domain
+    LOGD "Your domain is: ${domain}, checking it..."
+
+    # check if there already exists a certificate
+    local currentCert=$(~/.acme.sh/acme.sh --list | tail -1 | awk '{print $1}')
+    if [ "${currentCert}" == "${domain}" ]; then
+        local certInfo=$(~/.acme.sh/acme.sh --list)
+        LOGE "System already has certificates for this domain. Cannot issue again. Current certificate details:"
+        LOGI "$certInfo"
+        exit 1
+    else
+        LOGI "Your domain is ready for issuing certificates now..."
+    fi
+
+    # create a directory for the certificate
+    certPath="/root/cert/${domain}"
+    if [ ! -d "$certPath" ]; then
+        mkdir -p "$certPath"
+    else
+        rm -rf "$certPath"
+        mkdir -p "$certPath"
+    fi
+
+    # get the port number for the standalone server
+    local WebPort=80
+    read -p "Please choose which port to use (default is 80): " WebPort
+    if [[ ${WebPort} -gt 65535 || ${WebPort} -lt 1 ]]; then
+        LOGE "Your input ${WebPort} is invalid, will use default port 80."
+        WebPort=80
+    fi
+    LOGI "Will use port: ${WebPort} to issue certificates. Please make sure this port is open."
+
+    # issue the certificate
+    ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+    ~/.acme.sh/acme.sh --issue -d ${domain} --listen-v6 --standalone --httpport ${WebPort}
+    if [ $? -ne 0 ]; then
+        LOGE "Issuing certificate failed, please check logs."
+        rm -rf ~/.acme.sh/${domain}
+        exit 1
+    else
+        LOGE "Issuing certificate succeeded, installing certificates..."
+    fi
+
+    # install the certificate
+    ~/.acme.sh/acme.sh --installcert -d ${domain} \
+        --key-file /root/cert/${domain}/privkey.pem \
+        --fullchain-file /root/cert/${domain}/fullchain.pem
+
+    if [ $? -ne 0 ]; then
+        LOGE "Installing certificate failed, exiting."
+        rm -rf ~/.acme.sh/${domain}
+        exit 1
+    else
+        LOGI "Installing certificate succeeded, enabling auto renew..."
+    fi
+
+    # enable auto-renew
+    ~/.acme.sh/acme.sh --upgrade --auto-upgrade
+    if [ $? -ne 0 ]; then
+        LOGE "Auto renew failed, certificate details:"
+        ls -lah cert/*
+        chmod 755 $certPath/*
+        exit 1
+    else
+        LOGI "Auto renew succeeded, certificate details:"
+        ls -lah cert/*
+        chmod 755 $certPath/*
+    fi
+
+    # Prompt user to set panel paths after successful certificate installation
+    read -p "Would you like to set this certificate for the panel? (y/n): " setPanel
+    if [[ "$setPanel" == "y" || "$setPanel" == "Y" ]]; then
+        local webCertFile="/root/cert/${domain}/fullchain.pem"
+        local webKeyFile="/root/cert/${domain}/privkey.pem"
+
+        if [[ -f "$webCertFile" && -f "$webKeyFile" ]]; then
+            /usr/local/x-ui/x-ui cert -webCert "$webCertFile" -webCertKey "$webKeyFile"
+            LOGI "Panel paths set for domain: $domain"
+            LOGI "  - Certificate File: $webCertFile"
+            LOGI "  - Private Key File: $webKeyFile"
+            restart
+        else
+            LOGE "Error: Certificate or private key file not found for domain: $domain."
+        fi
+    else
+        LOGI "Skipping panel path setting."
+    fi
+}
+
+ssl_cert_issue_CF() {
+    echo -E ""
+    LOGD "******Instructions for use******"
+    LOGI "This Acme script requires the following data:"
+    LOGI "1.Cloudflare Registered e-mail"
+    LOGI "2.Cloudflare Global API Key"
+    LOGI "3.The domain name that has been resolved dns to the current server by Cloudflare"
+    LOGI "4.The script applies for a certificate. The default installation path is /root/cert "
+    confirm "Confirmed?[y/n]" "y"
+    if [ $? -eq 0 ]; then
+        # check for acme.sh first
+        if ! command -v ~/.acme.sh/acme.sh &>/dev/null; then
+            echo "acme.sh could not be found. we will install it"
+            install_acme
+            if [ $? -ne 0 ]; then
+                LOGE "install acme failed, please check logs"
+                exit 1
+            fi
+        fi
+        CF_Domain=""
+        CF_GlobalKey=""
+        CF_AccountEmail=""
+        certPath=/root/cert
+        if [ ! -d "$certPath" ]; then
+            mkdir $certPath
+        else
+            rm -rf $certPath
+            mkdir $certPath
+        fi
+        LOGD "Please set a domain name:"
+        read -p "Input your domain here:" CF_Domain
+        LOGD "Your domain name is set to:${CF_Domain}"
+        LOGD "Please set the API key:"
+        read -p "Input your key here:" CF_GlobalKey
+        LOGD "Your API key is:${CF_GlobalKey}"
+        LOGD "Please set up registered email:"
+        read -p "Input your email here:" CF_AccountEmail
+        LOGD "Your registered email address is:${CF_AccountEmail}"
+        ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+        if [ $? -ne 0 ]; then
+            LOGE "Default CA, Lets'Encrypt fail, script exiting..."
+            exit 1
+        fi
+        export CF_Key="${CF_GlobalKey}"
+        export CF_Email=${CF_AccountEmail}
+        ~/.acme.sh/acme.sh --issue --dns dns_cf -d ${CF_Domain} -d *.${CF_Domain} --log
+        if [ $? -ne 0 ]; then
+            LOGE "Certificate issuance failed, script exiting..."
+            exit 1
+        else
+            LOGI "Certificate issued Successfully, Installing..."
+        fi
+        ~/.acme.sh/acme.sh --installcert -d ${CF_Domain} -d *.${CF_Domain} --ca-file /root/cert/ca.cer \
+            --cert-file /root/cert/${CF_Domain}.cer --key-file /root/cert/${CF_Domain}.key \
+            --fullchain-file /root/cert/fullchain.cer
+        if [ $? -ne 0 ]; then
+            LOGE "Certificate installation failed, script exiting..."
+            exit 1
+        else
+            LOGI "Certificate installed Successfully,Turning on automatic updates..."
+        fi
+        ~/.acme.sh/acme.sh --upgrade --auto-upgrade
+        if [ $? -ne 0 ]; then
+            LOGE "Auto update setup Failed, script exiting..."
+            ls -lah cert
+            chmod 755 $certPath
+            exit 1
+        else
+            LOGI "The certificate is installed and auto-renewal is turned on, Specific information is as follows"
+            ls -lah cert
+            chmod 755 $certPath
+        fi
+    else
+        show_menu
+    fi
+}
+
+firewall_menu() {
+    echo -e "${green}\t1.${plain} Install Firewall & open ports"
+    echo -e "${green}\t2.${plain} Allowed List"
+    echo -e "${green}\t3.${plain} Delete Ports from List"
+    echo -e "${green}\t4.${plain} Disable Firewall"
+    echo -e "${green}\t0.${plain} Back to Main Menu"
+    read -p "Choose an option: " choice
+    case "$choice" in
+    0)
+        show_menu
+        ;;
+    1)
+        open_ports
+        ;;
+    2)
+        sudo ufw status
+        ;;
+    3)
+        delete_ports
+        ;;
+    4)
+        sudo ufw disable
+        ;;
+    *) echo "Invalid choice" ;;
+    esac
+}
+
+open_ports() {
+    if ! command -v ufw &>/dev/null; then
+        echo "ufw firewall is not installed. Installing now..."
+        apt-get update
+        apt-get install -y ufw
+    else
+        echo "ufw firewall is already installed"
+    fi
+
+    # Check if the firewall is inactive
+    if ufw status | grep -q "Status: active"; then
+        echo "firewall is already active"
+    else
+        # Open the necessary ports
+        ufw allow ssh
+        ufw allow http
+        ufw allow https
+        ufw allow 54321/tcp
+
+        # Enable the firewall
+        ufw --force enable
+    fi
+
+    # Prompt the user to enter a list of ports
+    read -p "Enter the ports you want to open (e.g. 80,443,2053 or range 400-500): " ports
+
+    # Check if the input is valid
+    if ! [[ $ports =~ ^([0-9]+|[0-9]+-[0-9]+)(,([0-9]+|[0-9]+-[0-9]+))*$ ]]; then
+        echo "Error: Invalid input. Please enter a comma-separated list of ports or a range of ports (e.g. 80,443,2053 or 400-500)." >&2
+        exit 1
+    fi
+
+    # Open the specified ports using ufw
+    IFS=',' read -ra PORT_LIST <<<"$ports"
+    for port in "${PORT_LIST[@]}"; do
+        if [[ $port == *-* ]]; then
+            # Split the range into start and end ports
+            start_port=$(echo $port | cut -d'-' -f1)
+            end_port=$(echo $port | cut -d'-' -f2)
+            # Loop through the range and open each port
+            for ((i = start_port; i <= end_port; i++)); do
+                ufw allow $i
+            done
+        else
+            ufw allow "$port"
+        fi
+    done
+
+    # Confirm that the ports are open
+    ufw status | grep $ports
+}
+
+delete_ports() {
+    # Prompt the user to enter the ports they want to delete
+    read -p "Enter the ports you want to delete (e.g. 80,443,2053 or range 400-500): " ports
+
+    # Check if the input is valid
+    if ! [[ $ports =~ ^([0-9]+|[0-9]+-[0-9]+)(,([0-9]+|[0-9]+-[0-9]+))*$ ]]; then
+        echo "Error: Invalid input. Please enter a comma-separated list of ports or a range of ports (e.g. 80,443,2053 or 400-500)." >&2
+        exit 1
+    fi
+
+    # Delete the specified ports using ufw
+    IFS=',' read -ra PORT_LIST <<<"$ports"
+    for port in "${PORT_LIST[@]}"; do
+        if [[ $port == *-* ]]; then
+            # Split the range into start and end ports
+            start_port=$(echo $port | cut -d'-' -f1)
+            end_port=$(echo $port | cut -d'-' -f2)
+            # Loop through the range and delete each port
+            for ((i = start_port; i <= end_port; i++)); do
+                ufw delete allow $i
+            done
+        else
+            ufw delete allow "$port"
+        fi
+    done
+
+    # Confirm that the ports are deleted
+    echo "Deleted the specified ports:"
+    ufw status | grep $ports
+}
+
+bbr_menu() {
+    echo -e "${green}\t1.${plain} Enable BBR"
+    echo -e "${green}\t2.${plain} Disable BBR"
+    echo -e "${green}\t0.${plain} Back to Main Menu"
+    read -p "Choose an option: " choice
+    case "$choice" in
+    0)
+        show_menu
+        ;;
+    1)
+        enable_bbr
+        ;;
+    2)
+        disable_bbr
+        ;;
+    *) echo "Invalid choice" ;;
+    esac
+}
+
+disable_bbr() {
+
+    if ! grep -q "net.core.default_qdisc=fq" /etc/sysctl.conf || ! grep -q "net.ipv4.tcp_congestion_control=bbr" /etc/sysctl.conf; then
+        echo -e "${yellow}BBR is not currently enabled.${plain}"
+        exit 0
+    fi
+
+    # Replace BBR with CUBIC configurations
+    sed -i 's/net.core.default_qdisc=fq/net.core.default_qdisc=pfifo_fast/' /etc/sysctl.conf
+    sed -i 's/net.ipv4.tcp_congestion_control=bbr/net.ipv4.tcp_congestion_control=cubic/' /etc/sysctl.conf
+
+    # Apply changes
+    sysctl -p
+
+    # Verify that BBR is replaced with CUBIC
+    if [[ $(sysctl net.ipv4.tcp_congestion_control | awk '{print $3}') == "cubic" ]]; then
+        echo -e "${green}BBR has been replaced with CUBIC successfully.${plain}"
+    else
+        echo -e "${red}Failed to replace BBR with CUBIC. Please check your system configuration.${plain}"
+    fi
+}
+
+enable_bbr() {
+    if grep -q "net.core.default_qdisc=fq" /etc/sysctl.conf && grep -q "net.ipv4.tcp_congestion_control=bbr" /etc/sysctl.conf; then
+        echo -e "${green}BBR is already enabled!${plain}"
+        exit 0
+    fi
+
+    # Check the OS and install necessary packages
+    case "${release}" in
+    ubuntu | debian | armbian)
+        apt-get update && apt-get install -yqq --no-install-recommends ca-certificates
+        ;;
+    centos | almalinux | rocky | ol)
+        yum -y update && yum -y install ca-certificates
+        ;;
+    fedora | amzn)
+        dnf -y update && dnf -y install ca-certificates
+        ;;
+    arch | manjaro | parch)
+        pacman -Sy --noconfirm ca-certificates
+        ;;
+    *)
+        echo -e "${red}Unsupported operating system. Please check the script and install the necessary packages manually.${plain}\n"
+        exit 1
+        ;;
+    esac
+
+    # Enable BBR
+    echo "net.core.default_qdisc=fq" | tee -a /etc/sysctl.conf
+    echo "net.ipv4.tcp_congestion_control=bbr" | tee -a /etc/sysctl.conf
+
+    # Apply changes
+    sysctl -p
+
+    # Verify that BBR is enabled
+    if [[ $(sysctl net.ipv4.tcp_congestion_control | awk '{print $3}') == "bbr" ]]; then
+        echo -e "${green}BBR has been enabled successfully.${plain}"
+    else
+        echo -e "${red}Failed to enable BBR. Please check your system configuration.${plain}"
+    fi
+}
+
+update_geo() {
+    cd /usr/local/x-ui/bin
+    echo -e "${green}\t1.${plain} Update Geofiles [Recommended choice] "
+    echo -e "${green}\t2.${plain} Download from optional jsDelivr CDN "
+    echo -e "${green}\t0.${plain} Back To Main Menu "
+    read -p "Select: " select
+
+    case "$select" in
+    0)
+        show_menu
+        ;;
+
+    1)
+        wget -N "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        wget -N "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        wget "https://github.com/chocolate4u/Iran-v2ray-rules/releases/latest/download/geoip.dat" -O /tmp/wget && mv /tmp/wget geoip_IR.dat && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        wget "https://github.com/chocolate4u/Iran-v2ray-rules/releases/latest/download/geosite.dat" -O /tmp/wget && mv /tmp/wget geosite_IR.dat && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        echo -e "${green}Files are updated.${plain}"
+        confirm_restart
+        ;;
+
+    2)
+        wget -N "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat" && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        wget -N "https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat" && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        wget "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-v2ray-rules@release/geoip.dat" -O /tmp/wget && mv /tmp/wget geoip_IR.dat && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        wget "https://cdn.jsdelivr.net/gh/chocolate4u/Iran-v2ray-rules@release/geosite.dat" -O /tmp/wget && mv /tmp/wget geosite_IR.dat && echo -e "${green}Success${plain}\n" || echo -e "${red}Failure${plain}\n"
+        echo -e "${green}Files are updated.${plain}"
+        confirm_restart
+        ;;
+
+    *)
+        LOGE "Please enter a correct number [0-2]\n"
+        update_geo
+        ;;
+    esac
+}
+
+run_speedtest() {
+    # Check if Speedtest is already installed
+    if ! command -v speedtest &>/dev/null; then
+        # If not installed, install it
+        local pkg_manager=""
+        local speedtest_install_script=""
+
+        if command -v dnf &>/dev/null; then
+            pkg_manager="dnf"
+            speedtest_install_script="https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.rpm.sh"
+        elif command -v yum &>/dev/null; then
+            pkg_manager="yum"
+            speedtest_install_script="https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.rpm.sh"
+        elif command -v apt-get &>/dev/null; then
+            pkg_manager="apt-get"
+            speedtest_install_script="https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh"
+        elif command -v apt &>/dev/null; then
+            pkg_manager="apt"
+            speedtest_install_script="https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh"
+        fi
+
+        if [[ -z $pkg_manager ]]; then
+            echo "Error: Package manager not found. You may need to install Speedtest manually."
+            return 1
+        else
+            curl -s $speedtest_install_script | bash
+            $pkg_manager install -y speedtest
+        fi
+    fi
+
+    # Run Speedtest
+    speedtest
+}
+
+show_usage() {
+    echo "X-UI Control Menu Usage"
+    echo "------------------------------------------"
+    echo "SUBCOMMANDS:"
+    echo "x-ui              - Admin Management Script"
+    echo "x-ui start        - Start"
+    echo "x-ui stop         - Stop"
+    echo "x-ui restart      - Restart"
+    echo "x-ui restart-xray - Restart xray-core"
+    echo "x-ui status       - Current Status"
+    echo "x-ui settings     - Current Settings"
+    echo "x-ui enable       - Enable Autostart on OS Startup"
+    echo "x-ui disable      - Disable Autostart on OS Startup"
+    echo "x-ui log          - Check Logs"
+    echo "x-ui update       - Update"
+    echo "x-ui install      - Install"
+    echo "x-ui uninstall    - Uninstall"
+    echo "x-ui help         - Control Menu Usage"
+    echo "------------------------------------------"
+}
+
+show_menu() {
+    echo -e "
+  ${green}X-UI Admin Management Script ${plain}
+————————————————
+  ${green}0.${plain} Exit 
+————————————————
+  ${green}1.${plain} Install
+  ${green}2.${plain} Update
+  ${green}3.${plain} Legacy Version
+  ${green}4.${plain} Uninstall
+————————————————
+  ${green}5.${plain} Reset Username and Password
+  ${green}6.${plain} Reset Web Base Path
+  ${green}7.${plain} Reset Panel Settings
+  ${green}8.${plain} Set Panel Port
+  ${green}9.${plain} View Panel Settings
+————————————————
+  ${green}10.${plain} Start
+  ${green}11.${plain} Stop
+  ${green}12.${plain} Restart
+  ${green}13.${plain} Restart Xray
+  ${green}14.${plain} Check State
+  ${green}15.${plain} Check Logs
+————————————————
+  ${green}16.${plain} Enable Autostart
+  ${green}17.${plain} Disable Autostart
+————————————————
+  ${green}18.${plain} SSL Certificate Management
+  ${green}19.${plain} Cloudflare SSL Certificate
+  ${green}20.${plain} Firewall Management
+————————————————
+  ${green}21.${plain} Enable or Disable BBR
+  ${green}22.${plain} Update Geo Files
+  ${green}23.${plain} Speedtest by Ookla
+ "
+    show_status
+    echo && read -p "Please enter your selection [0-22]: " num
+
+    case "${num}" in
+    0)
+        exit 0
+        ;;
+    1)
+        check_uninstall && install
+        ;;
+    2)
+        check_install && update
+        ;;
+    3)
+        check_install && legacy_version
+        ;;
+    4)
+        check_install && uninstall
+        ;;
+    5)
+        check_install && reset_user
+        ;;
+    6)
+        check_install && reset_webbasepath
+        ;;
+    7)
+        check_install && reset_config
+        ;;
+    8)
+        check_install && set_port
+        ;;
+    9)
+        check_install && check_config && get_uri
+        ;;
+    10)
+        check_install && start
+        ;;
+    11)
+        check_install && stop
+        ;;
+    12)
+        check_install && restart
+        ;;
+    13)
+        check_install && restart_xray
+        ;;
+    14)
+        check_install && status
+        ;;
+    15)
+        check_install && show_log
+        ;;
+    16)
+        check_install && enable
+        ;;
+    17)
+        check_install && disable
+        ;;
+    18)
+        ssl_cert_issue_main
+        ;;
+    19)
+        ssl_cert_issue_CF
+        ;;
+    20)
+        firewall_menu
+        ;;
+    21)
+        bbr_menu
+        ;;
+    22)
+        update_geo
+        ;;
+    23)
+        run_speedtest
+        ;;
+    *)
+        LOGE "Please enter the correct number [0-23]"
+        ;;
+    esac
+}
+
+if [[ $# > 0 ]]; then
+    case $1 in
+    "start")
+        check_install 0 && start 0
+        ;;
+    "stop")
+        check_install 0 && stop 0
+        ;;
+    "restart")
+        check_install 0 && restart 0
+        ;;
+    "restart-xray")
+        check_install 0 && restart_xray 0
+        ;;
+    "status")
+        check_install 0 && status 0
+        ;;
+    "settings")
+        check_install 0 && check_config 0 && get_uri 0
+        ;;
+    "enable")
+        check_install 0 && enable 0
+        ;;
+    "disable")
+        check_install 0 && disable 0
+        ;;
+    "log")
+        check_install 0 && show_log 0
+        ;;
+    "update")
+        check_install 0 && update 0
+        ;;
+    "install")
+        check_uninstall 0 && install 0
+        ;;
+    "uninstall")
+        check_install 0 && uninstall 0
+        ;;
+    *) show_usage ;;
+    esac
+else
+    show_menu
+fi
