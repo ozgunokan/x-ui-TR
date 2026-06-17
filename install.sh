@@ -142,16 +142,16 @@ install_x-ui() {
     cd /usr/local/
 
     if [ $# == 0 ]; then
-        last_version=$(curl -Ls "https://api.github.com/repos/ozgunokan/x-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+        last_version=$(curl -Ls "https://api.github.com/repos/ozgunokan/x-ui-TR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
             echo -e "${red}Failed to fetch x-ui version, it maybe due to Github API restrictions, please try it later${plain}"
             exit 1
         fi
         echo -e "Got x-ui latest version: ${last_version}, beginning the installation..."
-        url="https://github.com/ozgunokan/x-ui/releases/download/${last_version}/x-ui-linux-${ARCH_TYPE}.tar.gz"
+        url="https://github.com/ozgunokan/x-ui-TR/releases/download/${last_version}/x-ui-linux-${ARCH_TYPE}.tar.gz"
     else
         last_version=$1
-        url="https://github.com/ozgunokan/x-ui/releases/download/${last_version}/x-ui-linux-${ARCH_TYPE}.tar.gz"
+        url="https://github.com/ozgunokan/x-ui-TR/releases/download/${last_version}/x-ui-linux-${ARCH_TYPE}.tar.gz"
         echo -e "Beginning to install x-ui $1"
     fi
 
@@ -185,7 +185,7 @@ install_x-ui() {
     chmod +x x-ui
     [[ -f "x-ui.service" ]] && cp -f x-ui.service /etc/systemd/system/
     
-    wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/ozgunokan/x-ui/main/x-ui.sh
+    wget --no-check-certificate -O /usr/bin/x-ui https://raw.githubusercontent.com/ozgunokan/x-ui-TR/main/x-ui.sh
     chmod +x /usr/bin/x-ui
 
     config_after_install
