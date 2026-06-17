@@ -85,7 +85,7 @@
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
                             <strong>{{ i18n "pages.inbounds.stream.tcp.version" }}:</strong>
-                            <a href="https://github.com/alireza0/x-ui/releases" target="_blank">
+                            <a href="https://github.com/ozgunokan/x-ui-TR/releases" target="_blank">
                                 <a-tag color="purple" style="cursor: pointer;">X-UI {{ .cur_ver }}</a-tag>
                             </a>
                             <a-tooltip title='{{ i18n "pages.index.xraySwitch" }}'>
